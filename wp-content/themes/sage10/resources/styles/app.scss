@@ -1,0 +1,16 @@
+/* ==============================================
+   Global App SCSS
+   ============================================== */
+
+@import './custom';
+
+// Add additional custom code here
+
+// 1. Global Components to use
+@import 'layout/header';
+@import 'layout/offcanvas';
+@import 'layout/footer';
+@import 'layout/main';
+@import 'layout/post';
+@import 'layout/post-restricted';
+@import 'layout/post-basic';
