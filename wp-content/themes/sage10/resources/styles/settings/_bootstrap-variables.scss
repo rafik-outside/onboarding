@@ -17,7 +17,7 @@ $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
-$black: #000 !default;
+$black: #222222 !default;
 // scss-docs-end gray-color-variables
 
 // fusv-disable
@@ -45,8 +45,14 @@ $red: #dc3545 !default;
 $orange: #fd7e14 !default;
 $yellow: #ffc107 !default;
 $green: #198754 !default;
-$teal: #20c997 !default;
 $cyan: #0dcaf0 !default;
+$teal: #114e60 !default;
+$space: #222222 !default;
+$sky: #325288 !default;
+$mint: #f4fef3 !default;
+$peach: #f5cebe !default;
+$blush: #f4eee8 !default;
+
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -59,12 +65,17 @@ $colors: (
   'orange': $orange,
   'yellow': $yellow,
   'green': $green,
-  'teal': $teal,
   'cyan': $cyan,
   'black': $black,
   'white': $white,
   'gray': $gray-600,
   'gray-dark': $gray-800,
+  'sky': $sky,
+  'mint': $mint,
+  'peach': $peach,
+  'blush': $blush,
+  'teal': $teal,
+  'space': $space,
 ) !default;
 // scss-docs-end colors-map
 
@@ -157,16 +168,6 @@ $green-700: shade-color($green, 40%) !default;
 $green-800: shade-color($green, 60%) !default;
 $green-900: shade-color($green, 80%) !default;
 
-$teal-100: tint-color($teal, 80%) !default;
-$teal-200: tint-color($teal, 60%) !default;
-$teal-300: tint-color($teal, 40%) !default;
-$teal-400: tint-color($teal, 20%) !default;
-$teal-500: $teal !default;
-$teal-600: shade-color($teal, 20%) !default;
-$teal-700: shade-color($teal, 40%) !default;
-$teal-800: shade-color($teal, 60%) !default;
-$teal-900: shade-color($teal, 80%) !default;
-
 $cyan-100: tint-color($cyan, 80%) !default;
 $cyan-200: tint-color($cyan, 60%) !default;
 $cyan-300: tint-color($cyan, 40%) !default;
@@ -176,6 +177,66 @@ $cyan-600: shade-color($cyan, 20%) !default;
 $cyan-700: shade-color($cyan, 40%) !default;
 $cyan-800: shade-color($cyan, 60%) !default;
 $cyan-900: shade-color($cyan, 80%) !default;
+
+$space-100: tint-color($space, 80%) !default;
+$space-200: tint-color($space, 60%) !default;
+$space-300: tint-color($space, 40%) !default;
+$space-400: tint-color($space, 20%) !default;
+$space-500: $space !default;
+$space-600: shade-color($space, 20%) !default;
+$space-700: shade-color($space, 40%) !default;
+$space-800: shade-color($space, 60%) !default;
+$space-900: shade-color($space, 80%) !default;
+
+$mint-100: tint-color($mint, 80%) !default;
+$mint-200: tint-color($mint, 60%) !default;
+$mint-300: tint-color($mint, 40%) !default;
+$mint-400: tint-color($mint, 20%) !default;
+$mint-500: $mint !default;
+$mint-600: shade-color($mint, 20%) !default;
+$mint-700: shade-color($mint, 40%) !default;
+$mint-800: shade-color($mint, 60%) !default;
+$mint-900: shade-color($mint, 80%) !default;
+
+$sky-100: tint-color($sky, 80%) !default;
+$sky-200: tint-color($sky, 60%) !default;
+$sky-300: tint-color($sky, 40%) !default;
+$sky-400: tint-color($sky, 20%) !default;
+$sky-500: $sky !default;
+$sky-600: shade-color($sky, 20%) !default;
+$sky-700: shade-color($sky, 40%) !default;
+$sky-800: shade-color($sky, 60%) !default;
+$sky-900: shade-color($sky, 80%) !default;
+
+$peach-100: tint-color($peach, 80%) !default;
+$peach-200: tint-color($peach, 60%) !default;
+$peach-300: tint-color($peach, 40%) !default;
+$peach-400: tint-color($peach, 20%) !default;
+$peach-500: $peach !default;
+$peach-600: shade-color($peach, 20%) !default;
+$peach-700: shade-color($peach, 40%) !default;
+$peach-800: shade-color($peach, 60%) !default;
+$peach-900: shade-color($peach, 80%) !default;
+
+$blush-100: tint-color($blush, 80%) !default;
+$blush-200: tint-color($blush, 60%) !default;
+$blush-300: tint-color($blush, 40%) !default;
+$blush-400: tint-color($blush, 20%) !default;
+$blush-500: $blush !default;
+$blush-600: shade-color($blush, 20%) !default;
+$blush-700: shade-color($blush, 40%) !default;
+$blush-800: shade-color($blush, 60%) !default;
+$blush-900: shade-color($blush, 80%) !default;
+
+$teal-100: tint-color($teal, 80%) !default;
+$teal-200: tint-color($teal, 60%) !default;
+$teal-300: tint-color($teal, 40%) !default;
+$teal-400: tint-color($teal, 20%) !default;
+$teal-500: $teal !default;
+$teal-600: shade-color($teal, 20%) !default;
+$teal-700: shade-color($teal, 40%) !default;
+$teal-800: shade-color($teal, 60%) !default;
+$teal-900: shade-color($teal, 80%) !default;
 
 $blues: (
   'blue-100': $blue-100,
@@ -273,6 +334,18 @@ $greens: (
   'green-900': $green-900,
 ) !default;
 
+$cyans: (
+  'cyan-100': $cyan-100,
+  'cyan-200': $cyan-200,
+  'cyan-300': $cyan-300,
+  'cyan-400': $cyan-400,
+  'cyan-500': $cyan-500,
+  'cyan-600': $cyan-600,
+  'cyan-700': $cyan-700,
+  'cyan-800': $cyan-800,
+  'cyan-900': $cyan-900,
+) !default;
+
 $teals: (
   'teal-100': $teal-100,
   'teal-200': $teal-200,
@@ -285,17 +358,66 @@ $teals: (
   'teal-900': $teal-900,
 ) !default;
 
-$cyans: (
-  'cyan-100': $cyan-100,
-  'cyan-200': $cyan-200,
-  'cyan-300': $cyan-300,
-  'cyan-400': $cyan-400,
-  'cyan-500': $cyan-500,
-  'cyan-600': $cyan-600,
-  'cyan-700': $cyan-700,
-  'cyan-800': $cyan-800,
-  'cyan-900': $cyan-900,
+$spaces: (
+  'space-100': $space-100,
+  'space-200': $space-200,
+  'space-300': $space-300,
+  'space-400': $space-400,
+  'space-500': $space-500,
+  'space-600': $space-600,
+  'space-700': $space-700,
+  'space-800': $space-800,
+  'space-900': $space-900,
 ) !default;
+
+$skys: (
+  'sky-100': $sky-100,
+  'sky-200': $sky-200,
+  'sky-300': $sky-300,
+  'sky-400': $sky-400,
+  'sky-500': $sky-500,
+  'sky-600': $sky-600,
+  'sky-700': $sky-700,
+  'sky-800': $sky-800,
+  'sky-900': $sky-900,
+) !default;
+
+$mints: (
+  'mint-100': $mint-100,
+  'mint-200': $mint-200,
+  'mint-300': $mint-300,
+  'mint-400': $mint-400,
+  'mint-500': $mint-500,
+  'mint-600': $mint-600,
+  'mint-700': $mint-700,
+  'mint-800': $mint-800,
+  'mint-900': $mint-900,
+) !default;
+
+$peachs: (
+  'peach-100': $peach-100,
+  'peach-200': $peach-200,
+  'peach-300': $peach-300,
+  'peach-400': $peach-400,
+  'peach-500': $peach-500,
+  'peach-600': $peach-600,
+  'peach-700': $peach-700,
+  'peach-800': $peach-800,
+  'peach-900': $peach-900,
+) !default;
+
+$blushs: (
+  'blush-100': $blush-100,
+  'blush-200': $blush-200,
+  'blush-300': $blush-300,
+  'blush-400': $blush-400,
+  'blush-500': $blush-500,
+  'blush-600': $blush-600,
+  'blush-700': $blush-700,
+  'blush-800': $blush-800,
+  'blush-900': $blush-900,
+) !default;
+
 // fusv-enable
 
 // scss-docs-start theme-color-variables
@@ -319,6 +441,12 @@ $theme-colors: (
   'danger': $danger,
   'light': $light,
   'dark': $dark,
+  'sky': $sky,
+  'mint': $mint,
+  'peach': $peach,
+  'blush': $blush,
+  'teal': $teal,
+  'space': $space,
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -402,14 +530,34 @@ $gradient: linear-gradient(180deg, rgba($white, 0.15), rgba($white, 0)) !default
 // You can add more entries to the $spacers map, should you need more variation.
 
 // scss-docs-start spacer-variables-maps
-$spacer: 1rem !default;
+$spacer: 4rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * 0.25,
-  2: $spacer * 0.5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  1: $spacer * 0.1,
+  2: $spacer * 0.2,
+  3: $spacer * 0.3,
+  4: $spacer * 0.4,
+  5: $spacer * 0.5,
+  6: $spacer * 0.6,
+  7: $spacer * 0.7,
+  8: $spacer * 0.8,
+  9: $spacer * 0.9,
+  10: $spacer * 1,
+  11: $spacer * 1.1,
+  12: $spacer * 1.2,
+  13: $spacer * 1.3,
+  14: $spacer * 1.4,
+  15: $spacer * 1.5,
+  16: $spacer * 1.6,
+  17: $spacer * 1.7,
+  18: $spacer * 1.8,
+  19: $spacer * 1.9,
+  20: $spacer * 2,
+  21: $spacer * 2.1,
+  22: $spacer * 2.2,
+  23: $spacer * 2.3,
+  24: $spacer * 2.4,
+  25: $spacer * 2.5,
 ) !default;
 // scss-docs-end spacer-variables-maps
 
@@ -430,7 +578,7 @@ $position-values: (
 // Settings for the `<body>` element.
 
 $body-text-align: null !default;
-$body-color: $gray-900 !default;
+$body-color: $space !default;
 $body-bg: $white !default;
 
 $body-secondary-color: rgba($body-color, 0.75) !default;
@@ -477,11 +625,9 @@ $paragraph-margin-bottom: 1rem !default;
 // scss-docs-start grid-breakpoints
 $grid-breakpoints: (
   xs: 0,
-  sm: 576px,
   md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px,
+  xl: 1100px,
+  xxl: 1440px,
 ) !default;
 // scss-docs-end grid-breakpoints
 
@@ -494,11 +640,7 @@ $grid-breakpoints: (
 
 // scss-docs-start container-max-widths
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1320px,
+  xl: 1920px,
 ) !default;
 // scss-docs-end container-max-widths
 
@@ -527,10 +669,12 @@ $border-widths: (
   2: 2px,
   3: 3px,
   4: 4px,
-  5: 5px,
+  6: 6px,
+  7: 7px,
+  8: 8px,
 ) !default;
 $border-style: solid !default;
-$border-color: $gray-300 !default;
+$border-color: $teal !default;
 $border-color-translucent: rgba($black, 0.175) !default;
 // scss-docs-end border-variables
 
@@ -595,6 +739,7 @@ $aspect-ratios: (
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
 $font-family-sans-serif:
+  'Inter',
   system-ui,
   -apple-system,
   'Segoe UI',
@@ -602,20 +747,20 @@ $font-family-sans-serif:
   'Helvetica Neue',
   'Noto Sans',
   'Liberation Sans',
-  Arial,
   sans-serif,
   'Apple Color Emoji',
   'Segoe UI Emoji',
   'Segoe UI Symbol',
   'Noto Color Emoji' !default;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;
+
 // stylelint-enable value-keyword-case
 $font-family-base: var(--#{$prefix}font-sans-serif) !default;
 $font-family-code: var(--#{$prefix}font-monospace) !default;
 
 // $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
 // $font-size-base affects the font size of the body text
-$font-size-root: null !default;
+$font-size-root: 10px !default;
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
 $font-size-sm: $font-size-base * 0.875 !default;
 $font-size-lg: $font-size-base * 1.25 !default;
@@ -654,10 +799,24 @@ $font-sizes: (
 // scss-docs-end font-sizes
 
 // scss-docs-start headings-variables
+$headings-font-stack:
+  'Arial',
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  'Noto Sans',
+  'Liberation Sans',
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol',
+  'Noto Color Emoji' !default;
 $headings-margin-bottom: $spacer * 0.5 !default;
-$headings-font-family: null !default;
+$headings-font-family: $headings-font-stack !default;
 $headings-font-style: null !default;
-$headings-font-weight: 500 !default;
+$headings-font-weight: $font-weight-normal !default;
 $headings-line-height: 1.2 !default;
 $headings-color: inherit !default;
 // scss-docs-end headings-variables

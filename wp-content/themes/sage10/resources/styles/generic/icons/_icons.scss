@@ -23,249 +23,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-add {
-  &::before {
-    content: $icon-add;
-  }
-}
-.icon-arrow {
-  &::before {
-    content: $icon-arrow;
-  }
-}
-.icon-behance {
-  &::before {
-    content: $icon-behance;
-  }
-}
-.icon-climate {
-  &::before {
-    content: $icon-climate;
-  }
-}
-.icon-close {
-  &::before {
-    content: $icon-close;
-  }
-}
-.icon-discuss {
-  &::before {
-    content: $icon-discuss;
-  }
-}
-.icon-double-forward {
-  &::before {
-    content: $icon-double-forward;
-  }
-}
-.icon-education {
-  &::before {
-    content: $icon-education;
-  }
-}
-.icon-email {
-  &::before {
-    content: $icon-email;
-  }
-}
-.icon-emotional-intelligence {
-  &::before {
-    content: $icon-emotional-intelligence;
-  }
-}
 .icon-facebook {
   &::before {
     content: $icon-facebook;
-  }
-}
-.icon-fellowships {
-  &::before {
-    content: $icon-fellowships;
-  }
-}
-.icon-fitler {
-  &::before {
-    content: $icon-fitler;
-  }
-}
-.icon-five {
-  &::before {
-    content: $icon-five;
-  }
-}
-.icon-four {
-  &::before {
-    content: $icon-four;
-  }
-}
-.icon-home {
-  &::before {
-    content: $icon-home;
-  }
-}
-.icon-how-work {
-  &::before {
-    content: $icon-how-work;
-  }
-}
-.icon-id-card {
-  &::before {
-    content: $icon-id-card;
-  }
-}
-.icon-image {
-  &::before {
-    content: $icon-image;
-  }
-}
-.icon-instagram {
-  &::before {
-    content: $icon-instagram;
-  }
-}
-.icon-intrapreneurship {
-  &::before {
-    content: $icon-intrapreneurship;
-  }
-}
-.icon-justice {
-  &::before {
-    content: $icon-justice;
-  }
-}
-.icon-linkedin {
-  &::before {
-    content: $icon-linkedin;
-  }
-}
-.icon-logo-fuse {
-  &::before {
-    content: $icon-logo-fuse;
-  }
-}
-.icon-map-fill {
-  &::before {
-    content: $icon-map-fill;
-  }
-}
-.icon-map-outline {
-  &::before {
-    content: $icon-map-outline;
-  }
-}
-.icon-media-kit {
-  &::before {
-    content: $icon-media-kit;
-  }
-}
-.icon-microphone {
-  &::before {
-    content: $icon-microphone;
-  }
-}
-.icon-minus {
-  &::before {
-    content: $icon-minus;
-  }
-}
-.icon-more {
-  &::before {
-    content: $icon-more;
-  }
-}
-.icon-one {
-  &::before {
-    content: $icon-one;
-  }
-}
-.icon-pause {
-  &::before {
-    content: $icon-pause;
-  }
-}
-.icon-perseverence {
-  &::before {
-    content: $icon-perseverence;
-  }
-}
-.icon-play {
-  &::before {
-    content: $icon-play;
-  }
-}
-.icon-public-health {
-  &::before {
-    content: $icon-public-health;
-  }
-}
-.icon-quote-left {
-  &::before {
-    content: $icon-quote-left;
-  }
-}
-.icon-quote-right {
-  &::before {
-    content: $icon-quote-right;
-  }
-}
-.icon-recruitment {
-  &::before {
-    content: $icon-recruitment;
-  }
-}
-.icon-results {
-  &::before {
-    content: $icon-results;
-  }
-}
-.icon-search {
-  &::before {
-    content: $icon-search;
-  }
-}
-.icon-star {
-  &::before {
-    content: $icon-star;
-  }
-}
-.icon-state {
-  &::before {
-    content: $icon-state;
-  }
-}
-.icon-team {
-  &::before {
-    content: $icon-team;
-  }
-}
-.icon-three {
-  &::before {
-    content: $icon-three;
-  }
-}
-.icon-triangle-backward {
-  &::before {
-    content: $icon-triangle-backward;
-  }
-}
-.icon-triangle-down {
-  &::before {
-    content: $icon-triangle-down;
-  }
-}
-.icon-triangle-forward {
-  &::before {
-    content: $icon-triangle-forward;
-  }
-}
-.icon-triangle-outline-forward {
-  &::before {
-    content: $icon-triangle-outline-forward;
-  }
-}
-.icon-tumblr {
-  &::before {
-    content: $icon-tumblr;
   }
 }
 .icon-twitter {
@@ -273,33 +33,84 @@
     content: $icon-twitter;
   }
 }
-.icon-two {
+.icon-github {
   &::before {
-    content: $icon-two;
+    content: $icon-github;
   }
 }
-.icon-video {
+.icon-refresh {
   &::before {
-    content: $icon-video;
+    content: $icon-refresh;
   }
 }
-.icon-vimeo {
+.icon-search {
   &::before {
-    content: $icon-vimeo;
+    content: $icon-search;
+    color: #233554;
   }
 }
-.icon-volume {
+.icon-location {
   &::before {
-    content: $icon-volume;
+    content: $icon-location;
   }
 }
-.icon-why-works-1 {
+.icon-tick {
   &::before {
-    content: $icon-why-works-1;
+    content: $icon-tick;
   }
 }
-.icon-youtube {
+.icon-close {
   &::before {
-    content: $icon-youtube;
+    content: $icon-close;
+  }
+}
+.icon-bars {
+  &::before {
+    content: $icon-bars;
+  }
+}
+.icon-right {
+  &::before {
+    content: $icon-right;
+  }
+}
+.icon-down {
+  &::before {
+    content: $icon-down;
+  }
+}
+.icon-up-45 {
+  &::before {
+    content: $icon-up-45;
+  }
+}
+.icon-left {
+  &::before {
+    content: $icon-left;
+  }
+}
+.icon-up {
+  &::before {
+    content: $icon-up;
+  }
+}
+.icon-caret-right {
+  &::before {
+    content: $icon-caret-right;
+  }
+}
+.icon-caret-up {
+  &::before {
+    content: $icon-caret-up;
+  }
+}
+.icon-caret-down {
+  &::before {
+    content: $icon-caret-down;
+  }
+}
+.icon-linkedin {
+  &::before {
+    content: $icon-linkedin;
   }
 }

@@ -1,9 +1,13 @@
 .post-content {
   a {
-    text-decoration: underline;
-    transition: all 0.3s ease;
+    color: $teal;
     &:hover {
-      color: $primary;
+      color: $sky;
+    }
+    @include media-breakpoint-up(xl) {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-position: under;
     }
   }
 
@@ -55,10 +59,6 @@
   .wp-block-quote + .wp-block-embed,
   blockquote + .wp-block-embed {
     margin-top: 2.4rem;
-
-    @include media-breakpoint-up(lg) {
-      margin-top: 3.2rem;
-    }
   }
 
   p + *,
@@ -68,18 +68,10 @@
   blockquote + *,
   .wp-block-separator + * {
     margin-top: 2.4rem;
-
-    @include media-breakpoint-up(lg) {
-      margin-top: 3.2rem;
-    }
   }
 
   & + .post {
     margin-top: 2.4rem;
-
-    @include media-breakpoint-up(lg) {
-      margin-top: 3.2rem;
-    }
   }
 
   table {
@@ -100,10 +92,6 @@
   p {
     margin-top: 2.4rem;
     margin-bottom: 0;
-
-    @include media-breakpoint-up(lg) {
-      margin-top: 3.2rem;
-    }
   }
 
   img.alignleft,
@@ -111,7 +99,7 @@
   hr {
     margin: 2.4rem 0;
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xl) {
       margin: 3.2rem 0;
     }
   }
@@ -128,7 +116,7 @@
         float: right;
       }
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(xl) {
         margin-left: 3.2rem;
       }
     }
@@ -139,7 +127,7 @@
         float: left;
       }
 
-      @include media-breakpoint-up(lg) {
+      @include media-breakpoint-up(xl) {
         margin-right: 3.2rem;
       }
     }

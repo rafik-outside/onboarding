@@ -1,5 +1,37 @@
 .btn {
-  border-radius: 3.1rem;
-  padding: 1.2rem 2.5rem;
-  font-size: 2rem;
+  padding: 0.8rem 1.6rem;
+  transition: color 0.3s ease;
+  font-family: $btn-font-family;
+  align-items: center;
+  gap: 8px;
+}
+.btn-space {
+  @extend .btn;
+
+  @include button-variant($space, $white, $teal, $white, $blush, $white);
+
+  border-width: 0.2rem;
+  border-style: solid;
+}
+.btn-outline-space {
+  @extend .btn;
+
+  @include button-outline-variant($space, $teal, $blush);
+
+  border-width: 0.2rem;
+  border-style: solid;
+
+  &--size-medium {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.6rem;
+    gap: 10px;
+  }
+}
+.btn-outline-dark {
+  @extend .btn;
+
+  @include button-outline-variant($white, $sky, $blush);
+
+  border-width: 0.2rem;
+  border-style: solid;
 }

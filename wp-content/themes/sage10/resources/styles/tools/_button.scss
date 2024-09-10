@@ -1,0 +1,34 @@
+@mixin button-variant($background, $color, $hover-background, $hover-color, $disabled-background, $disabled-color) {
+  color: $color;
+  background-color: $background;
+  border-color: $background;
+  &:hover,
+  &:focus,
+  &.active {
+    color: $hover-color;
+    background-color: $hover-background;
+    border-color: $hover-background;
+  }
+  &[disabled],
+  &:disabled {
+    color: $disabled-color;
+    background-color: $disabled-background;
+    border-color: $disabled-background;
+  }
+}
+@mixin button-outline-variant($color, $hover-color, $disabled-color) {
+  color: $color;
+  background-color: transparent;
+  border-color: $color;
+  &:hover,
+  &:focus,
+  &.active {
+    color: $hover-color;
+    border-color: $hover-color;
+  }
+  &[disabled],
+  &:disabled {
+    color: $disabled-color;
+    border-color: $disabled-color;
+  }
+}
