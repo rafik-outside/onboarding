@@ -28,7 +28,7 @@ const adjust_sidebar_height = () => {
       let rect = header.getBoundingClientRect();
       var bottom = rect.bottom;
       header__nav__mobile.style.height = 'calc( 100vh - ' + bottom + 'px )';
-      header__nav__mobile.style.top = bottom + 2 + 'px';
+      header__nav__mobile.style.top = bottom + 'px';
     }
   }
 };
