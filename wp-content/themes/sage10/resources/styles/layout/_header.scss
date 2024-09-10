@@ -1,3 +1,157 @@
+.header {
+  position: sticky;
+  background-color: $white;
+  z-index: $zindex-sticky;
+  @include transition(left 0.3s ease);
+
+  top: 0;
+  &__open-menu-button {
+    cursor: pointer;
+    color: $space;
+  }
+
+  &__brand {
+    height: 7rem;
+    width: auto;
+  }
+  &__nav__mobile {
+    width: 100vw;
+    width: 100svw;
+    height: 100vh;
+    height: 100svh;
+    position: fixed;
+    left: -120%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: $teal;
+    z-index: $zindex-fixed;
+    padding: 5rem;
+    overflow: auto;
+    @include transition(left 0.3s ease);
+  }
+  &.is-menu-open {
+    @include media-breakpoint-down(xl) {
+      background-color: $teal;
+      border: 0.1rem $blush solid;
+    }
+  }
+  .is-menu-open &__brand {
+    @include media-breakpoint-down(xl) {
+      filter: brightness(0) invert(1);
+    }
+  }
+  .is-menu-open &__nav__mobile {
+    left: 0;
+  }
+
+  &__nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: auto;
+  }
+  &__nav-item {
+    margin-bottom: 4rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__nav-link {
+    font-size: 2.3rem;
+    line-height: 1.4;
+    font-weight: $font-weight-bold;
+    color: $white;
+    &:hover,
+    &:focus,
+    &.is-active {
+      text-decoration: underline;
+      text-underline-offset: 0.7rem;
+      color: $white;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    &__nav {
+      background: none;
+      position: static;
+      height: auto;
+      width: auto;
+    }
+
+    &__nav-item {
+      margin-right: 4rem;
+      margin-bottom: 0;
+    }
+    &__nav-link {
+      font-size: 1.8rem;
+      line-height: 1.5;
+      color: $space;
+      font-weight: $font-weight-semibold;
+
+      &:hover,
+      &:focus,
+      &.is-active {
+        color: $teal;
+        text-decoration: none;
+      }
+    }
+
+    &__brand {
+      height: 12.4rem;
+      width: auto;
+    }
+  }
+  &__nav__toggle {
+    cursor: pointer;
+  }
+  &__burger {
+    cursor: pointer;
+    width: 1.4rem;
+    height: 1.2rem;
+    position: relative;
+    border: none;
+    background: transparent;
+  }
+  &__burger__icon,
+  &__burger__icon::after,
+  &__burger__icon::before {
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 0;
+    height: 2px;
+    border-radius: 2px;
+    width: 1.4rem;
+    background: $space;
+    @include transition(all 0.3s ease);
+  }
+
+  &__burger__icon::before {
+    content: '';
+    top: -0.5rem;
+  }
+
+  &__burger__icon::after {
+    content: '';
+    top: 0.5rem;
+  }
+
+  &__burger.open &__burger__icon {
+    background: $white;
+    height: 0;
+  }
+  &__burger.open > &__burger__icon::before {
+    background: $white;
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  &__burger.open > &__burger__icon::after {
+    background: $white;
+    top: 0;
+    transform: rotate(45deg);
+  }
+}
 .#{$global} {
   &-header {
     width: 100%;
@@ -41,7 +195,6 @@
           padding: 0.1rem 0;
         }
       }
-
       &-submit {
         font-size: 2rem;
         margin-left: auto;
@@ -53,7 +206,6 @@
         &:hover {
           color: red;
         }
-
         i {
           font-size: 1.6rem;
           color: black;
@@ -62,20 +214,17 @@
             font-size: 2.4rem;
           }
         }
-
         span {
           font-size: 1.2rem;
           line-height: 2.4rem;
           color: black;
         }
       }
-
       &:focus-within {
         width: 18.1rem;
         @include media-breakpoint-up(md) {
           width: 21.8rem;
         }
-
         .search-input {
           opacity: 1;
           z-index: initial;
@@ -83,14 +232,13 @@
           width: calc(100% - 2.8rem);
           font-size: 1.2rem;
           line-height: 2.4rem;
-          //-webkit-appearance: none;
+          //--webkit-appearance: none;
           border-radius: 0;
 
           &::placeholder {
             color: $gray-600;
           }
         }
-
         .search-submit {
           color: red;
 
