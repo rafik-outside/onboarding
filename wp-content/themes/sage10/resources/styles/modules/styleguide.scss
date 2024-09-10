@@ -14,15 +14,15 @@
   border: 0 !important;
 }
 .styleguide {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  .heading_title {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
     font-weight: 700;
   }
-
+  .heading_text {
+    font-size: 1.8rem;
+    line-height: 2.9rem;
+  }
   &-wrap {
     padding: 230px 15px 0;
 

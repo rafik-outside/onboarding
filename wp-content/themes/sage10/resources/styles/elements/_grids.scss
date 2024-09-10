@@ -1,32 +1,51 @@
 .container {
+  padding-left: 12rem;
+  padding-right: 12rem;
+
+  @include media-breakpoint-down(xxl) {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
   @include media-breakpoint-down(xl) {
     padding-left: 4rem;
     padding-right: 4rem;
   }
-  @include media-breakpoint-down(lg) {
-    padding-left: 3.2rem;
-    padding-right: 3.2rem;
-    .row {
-      margin-right: -1.2rem;
-      margin-left: -1.2rem;
-      > .col,
-      > [class*='col-'] {
-        padding-right: 1.2rem;
-        padding-left: 1.2rem;
-      }
-    }
-  }
-  @include media-breakpoint-down(sm) {
-    padding-left: 3.6rem;
-    padding-right: 3.6rem;
-    .row {
-      margin-right: -0.8rem;
-      margin-left: -0.8rem;
-      > .col,
-      > [class*='col-'] {
-        padding-right: 0.8rem;
-        padding-left: 0.8rem;
-      }
-    }
+  @include media-breakpoint-down(md) {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
   }
 }
+
+// .container {
+//   @include media-breakpoint-down(xl) {
+//     padding-left: 4rem;
+//     padding-right: 4rem;
+//   }
+//   @include media-breakpoint-down(lg) {
+//     padding-left: 3.2rem;
+//     padding-right: 3.2rem;
+//     .row {
+//       margin-right: -1.2rem;
+//       margin-left: -1.2rem;
+//       > .col,
+//       > [class*='col-'] {
+//         padding-right: 1.2rem;
+//         padding-left: 1.2rem;
+//       }
+//     }
+//   }
+//   @include media-breakpoint-down(sm) {
+//     padding-left: 3.6rem;
+//     padding-right: 3.6rem;
+//     .row {
+//       margin-right: -0.8rem;
+//       margin-left: -0.8rem;
+//       > .col,
+//       > [class*='col-'] {
+//         padding-right: 0.8rem;
+//         padding-left: 0.8rem;
+//       }
+//     }
+//   }
+// }

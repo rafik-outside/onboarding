@@ -80,25 +80,27 @@
 
 //3. GENERIC
 @import './../../node_modules/bootstrap/scss/root';
+
 // Root scss
 @import './../../node_modules/bootstrap/scss/reboot';
-// Normalize Scss
-@import 'generic/fonts';
-@import 'generic/icons/icons';
-
-// 4. Elements
-@import 'elements/type';
-@import './../../node_modules/bootstrap/scss/images';
-@import 'elements/grids';
-@import 'elements/config';
 
 /** Extra layer of bootstrap Only */
+@import './../../node_modules/bootstrap/scss/images';
 @import './../../node_modules/bootstrap/scss/containers';
 @import './../../node_modules/bootstrap/scss/grid';
 @import './../../node_modules/bootstrap/scss/helpers';
 @import './../../node_modules/bootstrap/scss/list-group';
 @import './../../node_modules/bootstrap/scss/dropdown';
 @import './../../node_modules/bootstrap/scss/transitions';
+
+// Normalize Scss
+@import 'generic/fonts';
+@import 'generic/icons/icons';
+
+// 4. Elements
+@import 'elements/type';
+@import 'elements/grids';
+@import 'elements/config';
 
 // 5 . Common Layout
 @import './layout';

@@ -1,13 +1,14 @@
 .form {
   &-control {
-    border: 0.13rem solid black;
+    border: 0.2rem solid $space;
     border-radius: 0;
     box-shadow: none;
     outline: none;
-    padding: 1rem 1.6rem;
-    font-size: 1.2rem;
-    line-height: 2.4;
-    color: black;
+    padding: 1.6rem;
+    font-size: 2.8rem;
+    line-height: 3.2rem;
+    color: $space;
+    width: 100%;
 
     &:focus {
       box-shadow: none;
@@ -15,12 +16,21 @@
     }
 
     @include placeholder {
-      color: black;
+      font-style: italic;
+      color: $space;
     }
 
     &:focus,
     &:hover {
-      border: 0.13rem solid black;
+      border: 0.2rem solid $space;
+    }
+    &:invalid {
+      color: red;
+      border-color: red;
+    }
+    &:focus:invalid {
+      color: $space;
+      border-color: $space;
     }
   }
 }
@@ -34,7 +44,7 @@
   }
 }
 .form-check-input {
-  border: 0.15rem solid black;
+  border: 0.15rem solid $space;
   width: 1.6rem;
   height: 1.6rem;
   margin-top: 0;
@@ -48,21 +58,21 @@
   }
 
   &:checked[type='checkbox'] {
-    border: 0.15rem solid black;
+    border: 0.15rem solid $space;
     background-image: none;
     background-color: transparent;
     position: relative;
 
-    &::after {
-      content: $icon-close;
-      position: absolute;
-      top: -0.9rem;
-      left: -0.1rem;
-      @include icons-pseudo;
+    // &::after {
+    //   content: $icon-close;
+    //   position: absolute;
+    //   top: -0.9rem;
+    //   left: -0.1rem;
+    //   @include icons-pseudo;
 
-      font-size: 1.6rem;
-      color: green;
-    }
+    //   font-size: 1.6rem;
+    //   color: green;
+    // }
   }
 }
 .invalid {
@@ -76,12 +86,12 @@
 
   .hasError {
     outline: 0;
-    border: 0.13rem solid green;
-    color: green;
+    border: 0.2rem solid red;
+    color: red;
     position: relative;
 
     @include placeholder {
-      color: green;
+      color: red;
     }
   }
 }
