@@ -58,7 +58,7 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage'),
+        'primary_menu' => __('Primary Navigation', 'sage'),
     ]);
 
     /**
@@ -110,8 +110,8 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
      */
     add_theme_support('customize-selective-refresh-widgets');
-}, 20);
 
+}, 20);
 /**
  * Register the theme sidebars.
  *
@@ -135,3 +135,7 @@ add_action('widgets_init', function () {
         'id' => 'sidebar-footer',
     ] + $config);
 });
+if (file_exists(__DIR__ . '/Walkers/FedWalker.php')) {
+
+    require __DIR__ . '/Walkers/FedWalker.php';
+}
