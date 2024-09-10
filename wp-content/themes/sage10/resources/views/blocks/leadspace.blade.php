@@ -29,47 +29,75 @@
 @else
     @php
         $blockId = $block['id'];
-        $imgUrl1 = \Roots\asset('images/leadspace/leadspace-2.webp')->uri();
-        $imgUrl2 = \Roots\asset('images/leadspace/leadspace-1.webp')->uri();
-        $imgUrl3 = \Roots\asset('images/leadspace/leadspace-3.webp')->uri();
-
     @endphp
-    <section class="leadspace bg-blush  section-gutter" id="{{ $blockId }}">
+    <section class="leadspace @if ($backgroundVariation) {{ $backgroundVariation }} @endif  section-gutter"
+        id="{{ $blockId }}">
         <div class="container">
             <div class="row leadspace__row-gap">
-                <div class="col-md-5 pe-xl-5 ls-col-5">
-                    <div class="pe-xl-6 h-100">
-                        <img src="{{ $imgUrl1 }}" class="ls-col-5__img" alt="">
-                    </div>
-                </div>
-                <div class="col-md-7 ls-col-7  d-md-block d-none">
-                    <div class="h-100">
-                        <img src="{{ $imgUrl2 }}" class="ls-col-7__img" alt="">
-                    </div>
-                </div>
-                <div class="col-xl-8  pe-xl-5">
-                    <div class="p-xl-20 p-md-10 p-6  border-top-8 bg-white">
-                        <h1 class="h2"> Look deep into nature, and then you will understand everything better. </h1>
-                        <div class="mt-6  body-xl">
-                            <p>
-                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece
-                                of
-                                classical Latin literature from 45 BC, making it over 2000 years old.
-                            </p>
-                        </div>
-                        <div class="mt-10">
-                            <a href="#" class="btn-outline-space">Contact Us <i class="icon-right font-size-4">
-                                </i></a>
+                @if ($img1)
+                    <div class="col-md-5 pe-xl-5 ls-col-5">
+                        <div class="pe-xl-6 h-100">
+
+                            <img src="{{ $img1['url'] }}" class="ls-col-5__img"
+                                @empty(!$img1['alt'])
+                                alt="{{ $img1['alt'] }}"
+                            @endempty>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4 d-xl-block d-none  ps-xl-5">
-                    <div class="pe-6">
-                        <img src="{{ $imgUrl3 }}" class="ar-1x1" alt="">
+                @endif
+                @if ($img2)
+                    <div class="col-md-7 ls-col-7  d-md-block d-none">
+                        <div class="h-100">
+                            <img src="{{ $img2['url'] }}" class="ls-col-7__img"
+                                @empty(!$img2['alt'])
+                            alt="{{ $img2['alt'] }}"
+                        @endempty>
+                        </div>
                     </div>
-                </div>
+                @endif
+                @if ($card)
+                    <div class="col-xl-8  pe-xl-5">
+                        <div class="p-xl-20 p-md-10 p-6  border-top-8 bg-white">
+                            @if ($card['title'])
+                                @include('components.heading', [
+                                    'title' => $card['title'],
+                                    'tag' => $titleTag,
+                                    'heading_class' => 'h2',
+                                ])
+                            @endif
+                            </h1>
+                            @if ($card['content'])
+                                <div class="mt-6 @if ($bodyTextClass) {{ $bodyTextClass }} @endif">
+                                    {!! $card['content'] !!}
+                                </div>
+                            @endif
+                            @if ($card['buttonUrl'] || $card['buttonTitle'])
+                                <div class="mt-10">
+                                    <a href="{{ $card['buttonUrl'] }}"
+                                        @if ($card['buttonTarget']) target="{{ $card['buttonTarget  '] }}" @endif
+                                        class="btn-outline-space">{{ $card['buttonTitle'] }}
+                                        @if ($card['showButtonIcon'])
+                                            <i class="icon-right font-size-4">
+                                            </i>
+                                        @endif
+                                    </a>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                @endif
+                @if ($img3)
+                    <div class="col-xl-4 d-xl-block d-none  ps-xl-5">
+                        <div class="pe-6">
+                            <img src="{{ $img3['url'] }}" class="ar-1x1"
+                                @empty(!$img3['alt'])
+                            alt="{{ $img3['alt'] }}"
+                        @endempty>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </section>
 @endif
+<<<<
