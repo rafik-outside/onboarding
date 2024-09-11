@@ -15,6 +15,15 @@
     padding-left: 2.4rem;
     padding-right: 2.4rem;
   }
+  .row {
+    margin-right: -2rem;
+    margin-left: -2rem;
+    > .col,
+    > [class*='col-'] {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+  }
 }
 
 // .container {
