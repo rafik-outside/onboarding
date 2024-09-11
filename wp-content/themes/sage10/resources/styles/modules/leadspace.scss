@@ -1,7 +1,49 @@
-.aayus {
-  background-color: green;
-}
-body {
-  background-color: yellow;
-  color: white;
+@import '../common';
+
+.leadspace {
+  @include media-breakpoint-down(md) {
+    padding-top: 3.4rem;
+    padding-bottom: 3.4rem;
+  }
+  &__row-gap {
+    row-gap: 2.4rem;
+    @include media-breakpoint-up(md) {
+      row-gap: 4rem;
+      row-gap: calc(clamp(4rem, -4.834vw + 7.712rem, 2.4rem));
+    }
+    @include media-breakpoint-up(xl) {
+      row-gap: 6.4rem;
+    }
+  }
+  .ls-col-5 {
+    @include media-breakpoint-only(md) {
+      width: calc(41.6667% + 24px);
+    }
+    &__img {
+      //for height correction
+      object-fit: cover;
+      height: 100%;
+      aspect-ratio: 327/233.4;
+      @include media-breakpoint-up(md) {
+        aspect-ratio: 394.4/287.68;
+      }
+      @include media-breakpoint-up(xl) {
+        aspect-ratio: 486/397;
+      }
+    }
+  }
+  .ls-col-7 {
+    @include media-breakpoint-only(md) {
+      width: calc(58.333% - 24px);
+    }
+    &__img {
+      //for height correction
+      object-fit: cover;
+      height: 100%;
+      aspect-ratio: 509.6/287.68;
+      @include media-breakpoint-up(xl) {
+        aspect-ratio: 730/397;
+      }
+    }
+  }
 }
