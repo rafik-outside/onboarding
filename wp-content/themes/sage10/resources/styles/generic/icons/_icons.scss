@@ -23,6 +23,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-play {
+  &::before {
+    content: $icon-play;
+  }
+}
 .icon-facebook {
   &::before {
     content: $icon-facebook;
@@ -46,7 +51,6 @@
 .icon-search {
   &::before {
     content: $icon-search;
-    color: #233554;
   }
 }
 .icon-location {

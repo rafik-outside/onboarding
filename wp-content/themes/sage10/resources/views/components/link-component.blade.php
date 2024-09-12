@@ -1,4 +1,8 @@
-<a href="{{ $cta['url'] }}" class="{{ $a_class }}"
-    @empty($cta['target']) target="{{ $cta['target'] }}" @endempty title="{{ $cta['title'] }}">
-    {{ $cta['title'] }}
+<a href="{{ $url }}" class="{{ $a_class }}"
+    @empty($target) target="{{ $target }}" @endempty title="{{ $title }}">
+    {{ $title }}
+    @if($showIcon)
+        <i class="icon-right font-size-4">
+        </i>
+    @endif
 </a>
