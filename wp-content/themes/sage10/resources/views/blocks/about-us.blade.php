@@ -29,20 +29,21 @@
     @php
         $blockId = $block['id'];
     @endphp
+
     <section class="about-us section-gutter-l" id="{{ $blockId }}">
         <div class="container">
             <div class="row row-gap-10">
                 @if ($eyebrow || $title || $buttonUrl)
                     <div class="col-md-6 d-flex justify-content-center row-gap-10 flex-column ">
-                        @if ($eyebrow)
-                            <span class="eyebrow d-block "> {{ $eyebrow }}</span>
-                        @endif
-                        @if ($title)
-                            <h2 class="h3 mb-0">
-                                {{ $title }}
-                            </h2>
-                        @endif
-                        @if ($buttonUrl)
+                            @if ($eyebrow)
+                                <span class="eyebrow d-block "> {{ $eyebrow }}</span>
+                            @endif
+                            @if ($title)
+                                <h2 class="h3 mb-0">
+                                    {{ $title }}
+                                </h2>
+                            @endif
+                            @if ($buttonUrl)
                             <div class="">
                                 @include('components.link-component', [
                                     'title' => $buttonTitle,
@@ -52,7 +53,7 @@
                                     'a_class' => 'btn-sky',
                                 ])
                             </div>
-                        @endif
+                            @endif
 
                     </div>
                 @endif

@@ -38,7 +38,9 @@
     "lint-staged": "^15.1.0"
   },
   "dependencies": {
+    "@vimeo/player": "^2.24.0",
     "bootstrap": "5.3.2",
-    "purgecss-with-wordpress": "^5.0.0"
+    "purgecss-with-wordpress": "^5.0.0",
+    "swiper": "^11.1.12"
   }
 }
