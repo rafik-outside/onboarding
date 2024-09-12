@@ -47,7 +47,6 @@ class Leadspace extends Composer
             'buttonTitle' => isset($card['call_to_action_button']) && is_array($card['call_to_action_button']) ? $card['call_to_action_button']['title'] : false,
             'buttonTarget' => isset($card['call_to_action_button']) && is_array($card['call_to_action_button']) ? $card['call_to_action_button']['target'] : false,
             'showButtonIcon' => isset($card['showButtonIcon']) && is_array($card['showButtonIcon']) ?? false,
-
         ];
     }
 }

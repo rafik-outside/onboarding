@@ -1,5 +1,6 @@
 import domReady from '@roots/sage/client/dom-ready';
 import header from './global/header';
+
 // import 'bootstrap/js/src/offcanvas.js'
 
 /**

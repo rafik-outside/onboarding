@@ -243,6 +243,18 @@
       padding-bottom: 4rem;
     }
   }
+  &-gutter-l {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    @include media-breakpoint-up(md) {
+      padding-top: 8rem;
+      padding-bottom: 8rem;
+    }
+    @include media-breakpoint-up(xl) {
+      padding-top: 12rem;
+      padding-bottom: 12rem;
+    }
+  }
 }
 //border
 .border {
@@ -252,4 +264,7 @@
 }
 .ar-1x1 {
   aspect-ratio: 1 /1;
+}
+.font-size-4 {
+  font-size: 1.6rem;
 }

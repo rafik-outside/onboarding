@@ -4,7 +4,7 @@
             <div>
                 <div class="d-inline d-xl-none me-9 header__nav__toggle text-white ">
                     <button class="d-inline header__burger header-toggle-js" id="head-burger-js" aria-expanded="false"
-                        aria-label="Toogle Menu" >
+                        aria-label="Toogle Menu">
                         <span class="header__burger__icon">
                         </span>
                     </button>
@@ -17,7 +17,10 @@
         @endif
         @if ($cta)
             @include('components.link-component', [
-                'cta' => $cta,
+                'title' => $cta['title'] ?? false,
+                'url' => $cta['url'] ?? false,
+                'cta' => $cta['target'] ?? false,
+                'showIcon' => false,
                 'a_class' => 'btn-outline-space d-xl-none d-md-block d-none btn-outline-space--size-medium',
             ])
         @endif
