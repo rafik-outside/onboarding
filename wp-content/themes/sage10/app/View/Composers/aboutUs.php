@@ -18,7 +18,6 @@ class aboutUs extends Composer
     public function with()
     {
         $fields = get_field('fields');
-        // dd($fields);
         $cta = (isset($fields['cta_content']) && is_array($fields['cta_content']) && !empty($fields['cta_content'])) ? $fields['cta_content'] : false;
         $video = (isset($fields['video_content']) && is_array($fields['video_content']) && !empty($fields['video_content'])) ? $fields['video_content'] : false;
         $isVimeoLink = $video['is_vimeo_link'] ?? false;
@@ -31,7 +30,7 @@ class aboutUs extends Composer
             'showButtonIcon' => $cta['show_button_icon']  ?? false,
             'videoEyebrow' => $video['eyebrow'] ?? false,
             'isVimeoLink' => $isVimeoLink,
-            'videoUrl' => $isVimeoLink ? $this->vimeoUrl($video['video_url']) : $video['video_url'] ?? false,
+            'videoUrl' => $isVimeoLink ? $this->vimeoUrl($video['video_url']) : $video['video'] ?? false,
             'videoPoster' => $video['videoPoster'] ?? false,
 
         ];
