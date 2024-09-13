@@ -12,6 +12,15 @@
       @include media-breakpoint-up(xl) {
         padding-bottom: 59.7%;
       }
+      iframe,
+      video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
     &__content {
       position: absolute;
