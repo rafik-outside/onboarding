@@ -1,0 +1,54 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import '../common';
+
+.team {
+  @include media-breakpoint-down(md) {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+  }
+  &-swiper-img {
+    img {
+      aspect-ratio: 118 / 147;
+
+      @include media-breakpoint-up(md) {
+        aspect-ratio: 141 / 124;
+      }
+      @include media-breakpoint-up(xl) {
+        aspect-ratio: 327 / 281;
+      }
+    }
+  }
+  &-swiper-box {
+    padding: 2.4rem;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    @include media-breakpoint-up(md) {
+      padding: 4rem;
+    }
+  }
+  &-swiper-title {
+    margin-bottom: 4rem;
+  }
+  &-swiper-pagination {
+    text-align: center;
+    .swiper-pagination-bullet {
+      height: 0.8rem;
+      width: 0.8rem;
+      background: transparent;
+      border: 1px $sky solid;
+
+      @include media-breakpoint-up(xl) {
+        border: 1px $teal solid;
+      }
+      &-active {
+        background: $sky;
+        @include media-breakpoint-up(xl) {
+          background: $teal;
+        }
+      }
+    }
+  }
+}

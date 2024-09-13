@@ -1,5 +1,5 @@
 {{--
-    script[about-us.js]script
+    script[banner.js]script
     style[modules/about-us.scss]style
     Title: About Us
     Description: about-us Description]
@@ -35,15 +35,15 @@
             <div class="row row-gap-10">
                 @if ($eyebrow || $title || $buttonUrl)
                     <div class="col-md-6 d-flex justify-content-center row-gap-10 flex-column ">
-                            @if ($eyebrow)
-                                <span class="eyebrow d-block "> {{ $eyebrow }}</span>
-                            @endif
-                            @if ($title)
-                                <h2 class="h3 mb-0">
-                                    {{ $title }}
-                                </h2>
-                            @endif
-                            @if ($buttonUrl)
+                        @if ($eyebrow)
+                            <span class="eyebrow d-block "> {{ $eyebrow }}</span>
+                        @endif
+                        @if ($title)
+                            <h2 class="h3 mb-0">
+                                {{ $title }}
+                            </h2>
+                        @endif
+                        @if ($buttonUrl)
                             <div class="">
                                 @include('components.link-component', [
                                     'title' => $buttonTitle,
@@ -53,7 +53,7 @@
                                     'a_class' => 'btn-sky',
                                 ])
                             </div>
-                            @endif
+                        @endif
 
                     </div>
                 @endif
@@ -64,19 +64,19 @@
                                 <h6 class="eyebrow mb-4"> {{ $videoEyebrow }}</h6>
                             @endif
                             @if ($videoUrl)
-                                <div class=" about-us__video__container">
+                                <div class="about-us__video__container">
                                     <button class="about-us__video__icon
-                            js-play-video"><i
+                            js-play-video"
+                                        @if ($isVimeoLink) data-src="{{ $videoUrl }}" @endif><i
                                             class="icon-play"> </i></button>
                                     @if ($isVimeoLink)
-                                        <iframe src="{{ $videoUrl }}" loading="lazy" frameborder="0"
+                                        {{-- <iframe src="{{ $videoUrl }}" loading="lazy" frameborder="0"
                                             allow="autoplay; fullscreen" class="about-us__video__content"
                                             allowfullscreen>
-                                        </iframe>
+                                        </iframe> --}}
                                     @else
-                                        <video class="about-us__video__content"
+                                        <video class="about-us__video__content" src="{{ $videoUrl }}"
                                             @if ($videoPoster) poster="{{ $videoPoster }}" @endif>
-                                            <source src="{{ $videoUrl }}" type=”video/mp4 />
                                         </video>
                                     @endif
                                 </div>

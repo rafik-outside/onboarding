@@ -1,5 +1,6 @@
 import domReady from '@roots/sage/client/dom-ready';
 import header from './global/header';
+import ToggleVideo from './blocks/videoToggle';
 
 // import 'bootstrap/js/src/offcanvas.js'
 
@@ -9,6 +10,7 @@ import header from './global/header';
 domReady(async () => {
   // ...
   header();
+  new ToggleVideo();
 });
 
 /**
