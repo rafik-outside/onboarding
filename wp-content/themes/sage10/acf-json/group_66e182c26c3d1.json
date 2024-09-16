@@ -173,28 +173,17 @@
                             "label": "Video",
                             "name": "video",
                             "aria-label": "",
-                            "type": "file",
-                            "instructions": "",
+                            "type": "url",
+                            "instructions": "Add Mp4 Link or else It will be Empty.",
                             "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_66e188894854a",
-                                        "operator": "!=",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
+                            "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
-                            "library": "all",
-                            "min_size": "",
-                            "max_size": "",
-                            "mime_types": ".mp4"
+                            "default_value": "",
+                            "placeholder": ""
                         },
                         {
                             "key": "field_66e188da4854b",
@@ -276,5 +265,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726121993
+    "modified": 1726227801
 }

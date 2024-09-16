@@ -58,17 +58,17 @@
                     </div>
                 @endif
                 @if ($videoEyebrow || $videoUrl)
-                    <div class="col-xl-5 col-md-6  offset-xl-1">
-                        <div class="m-auto p-6 bg-mint">
+                    <div class="col-xl-5 col-md-6  offset-xl-1 my-auto">
+                        <div class=" p-6 bg-mint ">
                             @if ($videoEyebrow)
                                 <h6 class="eyebrow mb-4"> {{ $videoEyebrow }}</h6>
                             @endif
                             @if ($videoUrl)
                                 <div class="about-us__video__container">
-                                    <button class="about-us__video__icon
+                                    <button class="about-us__video__icon 
                             js-play-video"
                                         @if ($isVimeoLink) data-src="{{ $videoUrl }}" @endif><i
-                                            class="icon-play"> </i></button>
+                                            class="icon-play-pause"> </i></button>
                                     @if ($isVimeoLink)
                                         {{-- <iframe src="{{ $videoUrl }}" loading="lazy" frameborder="0"
                                             allow="autoplay; fullscreen" class="about-us__video__content"

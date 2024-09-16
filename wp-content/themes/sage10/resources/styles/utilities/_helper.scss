@@ -261,6 +261,11 @@
     border-top: 0.8rem $sky solid;
   }
 }
+.shadow {
+  &--orange {
+    box-shadow: 0.8rem 0.8rem 0 0 #f4653c;
+  }
+}
 .ar-1x1 {
   aspect-ratio: 1 /1;
 }

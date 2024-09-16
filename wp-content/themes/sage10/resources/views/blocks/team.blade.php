@@ -40,7 +40,6 @@
                         {{ $eyebrow }}
                     </div>
                 @endif
-
                 @if ($teams)
                     <div class="team-swiper-container swiper">
                         <div class="swiper-wrapper">
@@ -51,49 +50,6 @@
                                     ])
                                 </div>
                             @endforeach
-                           
-                            <div class="swiper-slide">
-                                <div class="row border-top-8 ">
-                                    <div class="col-md-6 pe-xl-9 pe-md-0 ">
-                                        <div class="team-swiper-img">
-                                            <img src="{{ $imgUrl }}" decoding="async" loading="lazy"
-                                                alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 bg-white ps-xl-9 ps-md-0 d-flex ">
-                                        <div class="team-swiper-box ">
-                                            <h5 class="h5 team-swiper-title">Sally Albana - Site Engineer</h5>
-                                            <div class="team-swiper-content body-xl">
-                                                “It is not so much for its beauty that the forest makes a claim upon
-                                                men’s
-                                                hearts, as for that subtle something, that quality of air that emanation
-                                                from old trees, that so wonderfully changes and renews a weary spirit.”
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="row border-top-8 ">
-                                    <div class="col-md-6 pe-xl-9 pe-md-0 ">
-                                        <div class="team-swiper-img">
-                                            <img decoding="async" loading="lazy" src="{{ $imgUrl }}"
-                                                alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 bg-white ps-xl-9 ps-md-0 d-flex ">
-                                        <div class="team-swiper-box ">
-                                            <h5 class="h5 team-swiper-title">Sally Albana - Site Engineer</h5>
-                                            <div class="team-swiper-content body-xl">
-                                                “It is not so much for its beauty that the forest makes a claim upon
-                                                men’s
-                                                hearts, as for that subtle something, that quality of air that emanation
-                                                from old trees, that so wonderfully changes and renews a weary spirit.”
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="pagination mt-md-10 mt-6">
                             <div class="team-swiper-pagination  "></div>
@@ -104,7 +60,6 @@
                         </div>
                     </div>
                 @endif
-
             </div>
     </section>
 @endif
