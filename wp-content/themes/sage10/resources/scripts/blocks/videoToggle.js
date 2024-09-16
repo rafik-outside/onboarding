@@ -43,9 +43,19 @@ class ToggleVideo {
         // Pause or play the video
         if (target.classList.contains('video-is-playing') && tagName) {
           const videos = document.querySelectorAll('.about-us__video__content');
+
           this.pauseAll(videos); // Call the instance method
+          const pauseButtons = document.querySelectorAll('.about-us__video__container .pause-button');
+          if (pauseButtons.length == 0) return;
+          this.removePauseButtonClass(pauseButtons);
         } else {
           this.playVideo(tagName, target, player); // Call the instance method
+          const pauseButtons = document.querySelectorAll('.about-us__video__container .pause-button');
+          button.classList.add('pause-button');
+          if (pauseButtons.length == 0) {
+            return;
+          }
+          this.removePauseButtonClass(pauseButtons);
         }
       });
     });
@@ -72,6 +82,13 @@ class ToggleVideo {
         element.pause(); // HTML5 video pause
       }
     });
+  }
+  removePauseButtonClass(pauseButtons) {
+    if (pauseButtons) {
+      pauseButtons.forEach((pause) => {
+        pause.classList.remove('pause-button');
+      });
+    }
   }
 }
 

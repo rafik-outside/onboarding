@@ -23,6 +23,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-pause {
+  &::before {
+    content: $icon-pause;
+  }
+}
 .icon-play {
   &::before {
     content: $icon-play;

@@ -40,30 +40,18 @@ class aboutUs extends Composer
         if (!$videoUrl) {
             return false;
         }
-
         // Check if the URL contains 'vimeo.com'
         if (strpos($videoUrl, 'vimeo.com') == false) {
             return false;
         }
-        $params = [];
-
-        // Check if 'controls' parameter is missing, if so, add it
-        if (strpos($videoUrl, 'controls=') === false) {
-            $params[] = 'controls=0';
-        }
-
-        // Check if 'autoplay' parameter is missing, if so, add it
-        if (strpos($videoUrl, 'autoplay=') === false) {
-            $params[] = 'autoplay=0';
-        }
-
-        // If there are parameters to add
-        if (!empty($params)) {
-            // Use the appropriate separator ('?' or '&') based on the presence of existing parameters
-            $separator = (strpos($videoUrl, '?') === false) ? '?' : '&';
-            // Append the parameters
-            $videoUrl .= $separator . implode('&', $params);
-        }
         return $videoUrl;
+    }
+    function checKmp4Linl($videoUrl)
+    {
+        if (!$videoUrl) {
+            return false;
+        }
+        $regex = '/https?:\/\/(?:www\.)?[^\s]+\.mp4/';
+        return preg_match($regex, $videoUrl, $match) ? $videoUrl  : false;
     }
 }
