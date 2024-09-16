@@ -139,3 +139,13 @@ if (file_exists(__DIR__ . '/Walkers/FedWalker.php')) {
 
     require __DIR__ . '/Walkers/FedWalker.php';
 }
+// Add preconnect for Google Fonts
+add_action('wp_head', function () {
+    echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
+    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
+},1);
+
+// Enqueue Inter font from Google Fonts
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style('inter-font', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', false, null);
+});

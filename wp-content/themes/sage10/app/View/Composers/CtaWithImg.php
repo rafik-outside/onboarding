@@ -27,7 +27,6 @@ class CtaWithImg extends Composer
         $cta = (isset($fields['cta']) && is_array($fields['cta']) && !empty($fields['cta'])) ? $fields['cta'] : false;
         return [
             'imgUrl' =>  isset($image['url']) ? $image['url'] : false,
-            'imgTarget' =>  isset($image['target']) ? $image['target'] : false,
             'imgAlt' =>  isset($image['alt']) ? $image['alt'] : false,
             'eyebrow' => $cta['eyebrow'] ?? false,
             'title' => $cta['title'] ?? false,
