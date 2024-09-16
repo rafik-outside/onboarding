@@ -28,7 +28,6 @@ class imgWithCta extends Composer
 
         return [
             'imgUrl' =>  isset($image['url']) ? $image['url'] : false,
-            'imgTarget' =>  isset($image['target']) ? $image['target'] : false,
             'imgAlt' =>  isset($image['alt']) ? $image['alt'] : false,
             'eyebrow' => $cta['eyebrow'] ?? false,
             'title' => $cta['title'] ?? false,

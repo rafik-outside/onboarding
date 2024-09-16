@@ -1,0 +1,58 @@
+@import '../common';
+
+.single-testimonial {
+  padding-top: 4.3rem;
+  padding-bottom: 5.8rem;
+  @include media-breakpoint-up(md) {
+    padding-top: 5.5rem;
+    padding-bottom: 6.6rem;
+  }
+  @include media-breakpoint-up(xl) {
+    padding-top: 8.4rem;
+    padding-bottom: 9.3rem;
+  }
+  .single-testimonial__img {
+    position: relative;
+    width: 15.3rem;
+    text-align: center;
+    aspect-ratio: 1/1;
+    &::before {
+      content: '';
+      width: 16.9rem;
+      display: block;
+      position: absolute;
+
+      top: -0.8rem;
+      left: -2.2rem;
+
+      background: $teal;
+      height: 16.9rem;
+      border-radius: 50%;
+      z-index: -1;
+      @include media-breakpoint-up(md) {
+        width: 26rem;
+        height: 26rem;
+        top: -1.2rem;
+        left: -3.4rem;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      width: 23.6rem;
+      height: 23.6rem;
+      margin-top: 4.43rem;
+    }
+
+    img {
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+    }
+  }
+  &__social {
+    &__link {
+      font-size: 24px;
+    }
+  }
+  &__content {
+    max-width: 70.2rem;
+  }
+}
