@@ -23,7 +23,7 @@ class App extends Composer
     public function with()
     {
         return [
-            'is_preview'=>is_admin() ? true:false,
+            'is_preview' => is_admin() ? true : false,
             'siteName' => $this->siteName(),
         ];
     }

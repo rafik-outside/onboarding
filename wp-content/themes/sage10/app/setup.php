@@ -59,6 +59,7 @@ add_action('after_setup_theme', function () {
      */
     register_nav_menus([
         'primary_menu' => __('Primary Navigation', 'sage'),
+        'footer' => __('Footer Menu', 'sage'),
     ]);
 
     /**
@@ -110,7 +111,6 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#customize-selective-refresh-widgets
      */
     add_theme_support('customize-selective-refresh-widgets');
-
 }, 20);
 /**
  * Register the theme sidebars.
@@ -138,12 +138,14 @@ add_action('widgets_init', function () {
 if (file_exists(__DIR__ . '/Walkers/FedWalker.php')) {
 
     require __DIR__ . '/Walkers/FedWalker.php';
+    require __DIR__ . '/Walkers/FedFooterWalker.php';
+
 }
 // Add preconnect for Google Fonts
 add_action('wp_head', function () {
     echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
     echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
-},1);
+}, 1);
 
 // Enqueue Inter font from Google Fonts
 add_action('wp_enqueue_scripts', function () {

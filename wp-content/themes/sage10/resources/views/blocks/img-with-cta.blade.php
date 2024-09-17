@@ -29,7 +29,7 @@
     @php
         $blockId = $block['id'];
     @endphp
-    <section class="about-us-img section-gutter-l bg-mint " id="{{ $blockId }}">
+    <section class="img-with-cta section-gutter-l bg-mint " id="{{ $blockId }}">
         <div class="container">
             <div class="row row-gap-12">
                 @if ($imgUrl)

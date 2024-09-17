@@ -19,6 +19,26 @@
       font-style: italic;
       color: $space;
     }
+    &.form-control--white {
+      color: $white;
+      background-color: transparent;
+      border-color: $white;
+      @include placeholder {
+        color: $blush;
+      }
+      &:focus,
+      &:hover,
+      &:focus:invalid {
+        border: 0.2rem solid $white;
+        color: $blush;
+      }
+    }
+    &.form-control--font-footer {
+      font-size: 1.8rem;
+      padding: 0.8rem 1.2rem;
+      line-height: 2.8rem;
+      font-weight: $font-weight-medium;
+    }
 
     &:focus,
     &:hover {

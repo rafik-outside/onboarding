@@ -44,3 +44,11 @@
   border-width: 0.2rem;
   border-style: solid;
 }
+.btn-outline-light {
+  @extend .btn;
+
+  @include button-outline-variant($white, #d3d3d3, $blush);
+
+  border-width: 0.2rem;
+  border-style: solid;
+}

@@ -1,7 +1,7 @@
 .header {
   position: sticky;
   background-color: $white;
-  z-index: $zindex-sticky;
+  z-index: calc($zindex-sticky + 1);
   @include transition(left 0.3s ease);
 
   top: 0;
@@ -30,18 +30,23 @@
     overflow: auto;
     @include transition(left 0.3s ease);
   }
+  .logo--light {
+    display: none;
+  }
   &.is-menu-open {
     @include media-breakpoint-down(xl) {
       background-color: $teal;
       outline: 0.1rem solid $blush;
       outline-offset: -1px;
+      .logo--dark {
+        display: none;
+      }
+      .logo--light {
+        display: inline;
+      }
     }
   }
-  .is-menu-open &__brand {
-    @include media-breakpoint-down(xl) {
-      filter: brightness(0) invert(1);
-    }
-  }
+
   .is-menu-open &__nav__mobile {
     left: 0;
   }

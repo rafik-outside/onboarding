@@ -1,11 +1,12 @@
 <?php
-if (!class_exists('FedWalker')) {
+if (!class_exists('FedFooterWalker')) {
 
-    class FedWalker extends Walker_Nav_Menu
+    class FedFooterWalker extends Walker_Nav_Menu
     {
         function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
         {
             $indent = ($depth) ? str_repeat("\t", $depth) : '';
+            $i = 0;
 
             $class_names = $value = '';
 
@@ -14,14 +15,9 @@ if (!class_exists('FedWalker')) {
 
             // Check our custom has_children property.
             if ($args->walker->has_children) {
-                $classes[] .= 'header__nav-item dropdown';
+                $classes[] .= 'accordion__title p-0';
             }
 
-            if (0 != $item->menu_item_parent) {
-                $classes[] .= '';
-            } else {
-                $classes[] .= 'header__nav-item ';
-            }
 
             $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
             $class_names = ' class="' . esc_attr($class_names) . '"';
@@ -30,20 +26,21 @@ if (!class_exists('FedWalker')) {
             $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
             $id = strlen($id) ? ' id="' . esc_attr($id) . '"' : '';
 
-            $output .= $indent . '<li' . $id . $value . $class_names . '>';
 
             $attributes  = !empty($item->attr_title) ? ' title="'  . esc_attr($item->attr_title) . '"' : '';
             $attributes .= !empty($item->target)     ? ' target="' . esc_attr($item->target) . '"' : '';
             $attributes .= !empty($item->xfn)        ? ' rel="'    . esc_attr($item->xfn) . '"' : '';
             $attributes .= !empty($item->url)        ? ' href="'   . esc_attr($item->url) . '"' : '';
-            if (in_array('current-menu-item', $classes)) {
-                $attributes .= ' class="header__nav-link is-active"';
+            if ($depth == 0) {
+                $attributes .= ' class="h6 text-white mb-0"';
+                $output .= $indent . '<div class="col-xl-3 col-md-6"><div class="accordion"><div' . $id . $value . $class_names . '>';
             } else {
-                if ($args->walker->has_children) {
-                    $attributes .= ' class="header__nav-link dropdown-toggle" title="' . $item->title . '"';
-                } else {
-                    $attributes .= ' class="header__nav-link" aria-current="page" title="' . $item->title . '"';
-                }
+                $output .= $indent . '<li' . $id . $value . $class_names . '>';
+            }
+            if ($depth == 0) {
+                $attributes .= ' class="h6 text-white mb-0"';
+            } else {
+                $attributes .= ' class="footer__list__link""';
             }
 
 
@@ -54,12 +51,14 @@ if (!class_exists('FedWalker')) {
             $item_output .= $args->link_before . '' . $menutitle . '' . $args->link_after;
             $item_output .= '</a>';
 
+
+
             if ($args->walker->has_children) {
 
                 $attributesinner = !empty($item->url) ? ' href="'   . esc_attr($item->url) . '"' : '';
 
-                $item_output .= '
-                <ul class="header__dropdown-menu fade-up m-0" >';
+                $item_output .= '</div><div class="accordion__body">
+                <ul class="footer__list d-flex flex-column " >';
             }
 
             $item_output .= $args->after;
@@ -81,6 +80,14 @@ if (!class_exists('FedWalker')) {
         {
             $indent = str_repeat("\t", $depth);
             $output .= "$indent</ul>";
+        }
+        function end_el(&$output, $item, $depth = 0, $args = null)
+        {
+            if ($depth == 0) {
+                $output .= "</div> </div></div>\n"; // Close accordion body div
+            } else {
+                $output .= "</li>\n"; // Close <li>
+            }
         }
     }
 }
