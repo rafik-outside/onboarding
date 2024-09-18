@@ -44,6 +44,21 @@
       .logo--light {
         display: inline;
       }
+
+      .btn-outline-space {
+        color: $white;
+        border-color: $white;
+        &:focus,
+        &:hover {
+          color: $sky;
+          border-color: $sky;
+        }
+        &[disabled],
+        &:disabled {
+          color: $blush;
+          border-color: $blush;
+        }
+      }
     }
   }
 
