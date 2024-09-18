@@ -13,6 +13,7 @@ const header = () => {
           return;
         }
         header_menu.classList.toggle('is-menu-open');
+        document.body.classList.toggle('overflow-hidden');
       });
     });
   });

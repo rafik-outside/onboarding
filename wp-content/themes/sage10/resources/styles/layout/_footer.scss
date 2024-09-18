@@ -1,3 +1,53 @@
+@import '../common';
+
+.footer {
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    > li {
+      margin-bottom: 1.6rem;
+    }
+    &__link {
+      color: $white;
+      text-decoration: underline;
+      text-underline-position: under;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+  }
+  .accordion {
+    &__title {
+      background: none;
+      border: 0;
+    }
+    &__body {
+      margin-top: 2.4rem;
+    }
+    @include media-breakpoint-down(xl) {
+      &__body {
+        height: 0;
+        margin-top: 0;
+        visibility: hidden;
+        transform: scaleY(0);
+        transform-origin: top;
+        @include transition(transform 0.26s ease);
+      }
+      &.is-open {
+        .accordion__body {
+          margin-top: 2.4rem;
+          visibility: visible;
+          transform: scaleY(1);
+          height: auto;
+          display: block;
+        }
+      }
+    }
+  }
+}
 .#{$global} {
   &-footer {
     background-color: green;

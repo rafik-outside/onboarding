@@ -1,5 +1,5 @@
 <a href="{{ $url }}" class="{{ $a_class }}"
-    @empty($target) target="{{ $target }}" @endempty title="{{ $title }}">
+    @if($target) target="{{ $target }}" @endif title="{{ $title }}">
     {{ $title }}
     @if($showIcon)
         <i class="icon-right font-size-4">
