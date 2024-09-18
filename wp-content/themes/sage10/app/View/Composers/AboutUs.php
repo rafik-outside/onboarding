@@ -4,7 +4,7 @@ namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
 
-class aboutUs extends Composer
+class AboutUs extends Composer
 {
     protected static $views = [
         'blocks.about-us',

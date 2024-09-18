@@ -4,7 +4,7 @@ namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
 
-class imgWithCta extends Composer
+class ImgWithCta extends Composer
 {
     /**
      * List of views served by this composer.
