@@ -1,14 +1,74 @@
+@import '../common';
+
 .post-content {
+  @include media-breakpoint-down(md) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  &__header-gutter-l {
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      padding-top: 12rem;
+      padding-bottom: 12rem;
+    }
+  }
+  &__image {
+    aspect-ratio: 327/ 245;
+    object-fit: cover;
+
+    @include media-breakpoint-up(md) {
+      aspect-ratio: 698 / 392;
+    }
+
+    @include media-breakpoint-up(xl) {
+      aspect-ratio: 840 / 473;
+    }
+  }
+  &__title-container {
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+      top: -10.7rem;
+      margin-bottom: -10.7rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      top: -19.6rem;
+      margin-bottom: -19.6rem;
+    }
+  }
   a {
     color: $teal;
     &:hover {
       color: $sky;
     }
+
     @include media-breakpoint-up(xl) {
       text-decoration: underline;
       text-decoration-thickness: 2px;
       text-underline-position: under;
     }
+  }
+  &--max-width {
+    @include media-breakpoint-up(md) {
+      max-width: 84rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      max-width: 84rem;
+    }
+  }
+  :first-child {
+    margin-top: 0;
   }
 
   h1,
@@ -20,10 +80,29 @@
   p,
   figure {
     margin-bottom: 0;
+    & > figcaption {
+      margin-top: 2.4rem;
+      margin-bottom: 0;
+      @include media-breakpoint-down(md) {
+        margin: 0;
+        padding: 2.4rem 1.6rem 1.6rem;
+        background-color: #eaefed;
+      }
+      @include media-breakpoint-up(md) {
+        margin-top: 4rem;
+      }
+    }
   }
 
-  > figure {
+  figure {
     max-width: 100%;
+    > img {
+      max-width: 100%;
+      width: 100%;
+      @include media-breakpoint-up(md) {
+        box-shadow: 0.8rem 0.8rem 0 #eaefed;
+      }
+    }
   }
 
   .wp-block-image + *,
@@ -59,8 +138,12 @@
   .wp-block-quote + .wp-block-embed,
   blockquote + .wp-block-embed {
     margin-top: 2.4rem;
-  }
+    color: $black;
 
+    @include media-breakpoint-up(md) {
+      margin-top: 4rem;
+    }
+  }
   p + *,
   ul + *,
   ol + *,
@@ -68,10 +151,16 @@
   blockquote + *,
   .wp-block-separator + * {
     margin-top: 2.4rem;
+    @include media-breakpoint-up(md) {
+      margin-top: 4rem;
+    }
   }
 
   & + .post {
     margin-top: 2.4rem;
+    @include media-breakpoint-up(md) {
+      margin-top: 4rem;
+    }
   }
 
   table {
@@ -91,6 +180,12 @@
   ol,
   p {
     margin-top: 2.4rem;
+    margin-bottom: 0;
+    @include media-breakpoint-up(md) {
+      margin-top: 4rem;
+    }
+  }
+  ul > li {
     margin-bottom: 0;
   }
 
@@ -151,6 +246,32 @@
   .pull-right {
     @include media-breakpoint-up(md) {
       float: right !important;
+    }
+  }
+
+  .has-medium-font-size {
+    font-size: 1.6rem !important;
+    line-height: 1.5;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 1.8rem !important;
+    }
+  }
+  .has-x-large-font-size {
+    font-size: 2.3rem !important;
+    line-height: 1.4;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 2.8rem !important;
+    }
+  }
+  .has-large-font-size,
+  .has-medium-font-size {
+    font-size: 2rem !important;
+    line-height: 1.5;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 2.3rem !important;
     }
   }
 }
