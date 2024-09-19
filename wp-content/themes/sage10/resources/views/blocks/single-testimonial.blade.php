@@ -1,5 +1,5 @@
 {{--
-    script[]script
+    script[videoToggle.js]script
     style[modules/single-testimonial.scss]style
     Title: Single Testimonial
     Description: Single Testimonial Section]
@@ -25,7 +25,7 @@
         $imgUrl = \Roots\asset('images/preview/single-testimonial.webp')->uri();
     @endphp
     <img loading="lazy" src="{!! $imgUrl !!}" style="width:100%;height:auto;">
-@elseif($imgUrl || $title || $content || $name || $designation )
+@elseif($imgUrl || $title || $content || $name || $designation)
     @php
         $blockId = $block['id'];
 
@@ -40,22 +40,25 @@
                         </h2>
                     @endif
                     @if ($subtitle)
-                        <div class="body-xl text-center ">
-                            {{ $subtitle }}
+                        <div class="body-xl text-center mb-xl-14 mb-6 ">
+                            {!! $subtitle !!}
                         </div>
                     @endif
                     @if ($imgUrl)
-                        <div class="single-testimonial__img  mx-auto mt-xl-14 mt-6">
-                            <img src="{{ $imgUrl }}" @if($imgALt) alt="{{ $imgALt }}" @endif loading="lazy" decoding="async">
+                        <div class="single-testimonial__img  mx-auto  mb-xl-12 mb-md-11 mb-8">
+                            <img src="{{ $imgUrl }}"
+                                @if ($imgALt) alt="{{ $imgALt }}" @endif loading="lazy"
+                                decoding="async">
                         </div>
                     @endif
                     @if ($name)
-                        <div class="h4 text-teal text-center mt-xl-12 mt-md-11 mt-8">
+                        <div class="h4 text-teal text-center mb-xl-5 mb-md-7 mb-4">
                             {{ $name }} <span class="d-md-inline d-block">{{ $designation }}</span>
                         </div>
                     @endif
                     @if ($linkedinLink || $githubLink || $twitterLink || $fbLink)
-                        <div class="single-testimonial__social d-flex column-gap-3 justify-content-center">
+                        <div
+                            class="single-testimonial__social d-flex column-gap-3 justify-content-center mb-xl-5 mb-md-7 mb-6 ">
                             @if ($linkedinLink)
                                 <a href="{{ $linkedinLink }}" title="Linked In" class="single-testimonial__social__link"
                                     target="_blank">
@@ -78,7 +81,7 @@
                                 </a>
                             @endif
                             @if ($fbLink)
-                                <a href="{{ $fbLink }}" title="Facebook" class="single-testimonial__social__link"
+                                <a href="{{ $fbLink }}" title="Facebook" class="single-testimonial__social__link "
                                     target="_blank">
                                     <i class="icon-facebook text-sky">
                                     </i>
@@ -87,7 +90,7 @@
                         </div>
                     @endif
                     @if ($content)
-                        <div class="text-center body single-testimonial__content mx-auto mt-xl-5 mt-md-7 mt-6">
+                        <div class="text-center body single-testimonial__content mx-auto ">
                             {!! $content !!}
                         </div>
                     @endif

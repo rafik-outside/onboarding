@@ -32,7 +32,7 @@
     <section class="cta-with-img section-gutter-l" id="{{ $blockId }}">
         <div class="container">
             <div class="row row-gap-10">
-                <div class="col-xl-6  d-flex flex-column row-gap-10 order-xl-1 order-2 my-auto">
+                <div class="col-xl-6 col-md-6 d-flex flex-column row-gap-10 order-md-1 order-2 my-auto">
                     @if ($eyebrow)
                         <div class="eyebrow mb-0">
                             {{ $eyebrow }}
@@ -67,7 +67,7 @@
                     @endif
                 </div>
                 @if ($imgUrl)
-                    <div class="col-xl-5  my-auto order-1">
+                    <div class="col-xl-5 col-md-6  my-auto order-1 offset-xl-1">
                         <div class="cta-with-img__img">
                             <img src="{{ $imgUrl }}" loading="lazy" decoding="async"
                                 @if ($imgAlt) alt="{{ $imgAlt }}" @endif>

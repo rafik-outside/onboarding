@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_66e7badbe1514",
-            "label": "",
+            "label": "Cta With Img Block",
             "name": "fields",
             "aria-label": "",
             "type": "group",
@@ -154,7 +154,7 @@
                 },
                 {
                     "key": "field_66e7bbeae151b",
-                    "label": "Image",
+                    "label": "Right Image",
                     "name": "image",
                     "aria-label": "",
                     "type": "image",
@@ -198,5 +198,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726469821
+    "modified": 1726740696
 }

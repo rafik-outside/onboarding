@@ -66,6 +66,8 @@
     left: 0;
   }
   &__nav-menu {
+    gap: 4rem;
+    flex-wrap: wrap;
     list-style: none;
     padding: 0;
     margin: auto;
@@ -99,7 +101,6 @@
     }
 
     &__nav-item {
-      margin-right: 4rem;
       margin-bottom: 0;
     }
     &__nav-link {

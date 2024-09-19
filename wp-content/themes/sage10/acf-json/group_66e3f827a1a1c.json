@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_66e3f82799630",
-            "label": "",
+            "label": "Team Block",
             "name": "fields",
             "aria-label": "",
             "type": "group",
@@ -62,7 +62,7 @@
                     "sub_fields": [
                         {
                             "key": "field_66e3f94d99633",
-                            "label": "Image",
+                            "label": "Left Image",
                             "name": "image",
                             "aria-label": "",
                             "type": "image",
@@ -151,5 +151,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726217606
+    "modified": 1726740655
 }

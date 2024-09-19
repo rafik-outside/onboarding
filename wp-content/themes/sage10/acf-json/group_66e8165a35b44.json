@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_66e8165a21915",
-            "label": "",
+            "label": "Cta Banner Block",
             "name": "fields",
             "aria-label": "",
             "type": "group",
@@ -115,5 +115,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726486349
+    "modified": 1726740428
 }

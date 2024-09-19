@@ -52,6 +52,7 @@ $sky: #325288 !default;
 $mint: #f4fef3 !default;
 $peach: #f5cebe !default;
 $blush: #f4eee8 !default;
+$moon: #eaefed !default;
 
 // scss-docs-end color-variables
 
@@ -447,6 +448,7 @@ $theme-colors: (
   'blush': $blush,
   'teal': $teal,
   'space': $space,
+  'moon': $moon,
 ) !default;
 // scss-docs-end theme-colors-map
 

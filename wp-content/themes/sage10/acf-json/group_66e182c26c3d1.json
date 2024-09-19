@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_66e182c248542",
-            "label": "",
+            "label": "About Us Block",
             "name": "fields",
             "aria-label": "",
             "type": "group",
@@ -176,7 +176,15 @@
                             "type": "url",
                             "instructions": "Add Mp4 Link or else It will be Empty.",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_66e188894854a",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -187,7 +195,7 @@
                         },
                         {
                             "key": "field_66e188da4854b",
-                            "label": "Video Url",
+                            "label": "Vimeo Video Url",
                             "name": "video_url",
                             "aria-label": "",
                             "type": "link",
@@ -215,23 +223,15 @@
                             "name": "video_thumbnail",
                             "aria-label": "",
                             "type": "image",
-                            "instructions": "",
+                            "instructions": "You can set Image Instead  Video",
                             "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_66e188894854a",
-                                        "operator": "!=",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
+                            "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
+                            "return_format": "array",
                             "library": "all",
                             "min_width": "",
                             "min_height": "",
@@ -265,5 +265,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726227801
+    "modified": 1726742857
 }

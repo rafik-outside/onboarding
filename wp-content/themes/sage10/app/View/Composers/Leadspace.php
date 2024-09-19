@@ -27,19 +27,15 @@ class Leadspace extends Composer
             'backgroundVariation' => $fields['background_variation'] ?? false,
             'titleTag'          => $fields['ls_card_title_tag']  ??  'h2',
             'bodyTextClass'     => $fields['ls_card_text_variation']  ??  false,
-            'img1'              => isset($fields['ls_image_1']) && is_array($fields['ls_image_1']) ? $fields['ls_image_1'] : false,
-            'img2'              => isset($fields['ls_image_2']) && is_array($fields['ls_image_2']) ? $fields['ls_image_2'] : false,
-            'img3'              => isset($fields['ls_image_3']) && is_array($fields['ls_image_3']) ? $fields['ls_image_3'] : false,
+            'img1'              => isset($fields['ls_image_1']) && is_array($fields['ls_image_1']) && !empty($fields['ls_image_1']) ? $fields['ls_image_1'] : false,
+            'img2'              => isset($fields['ls_image_2']) && is_array($fields['ls_image_2']) && !empty($fields['ls_image_2'])  ? $fields['ls_image_2'] : false,
+            'img3'              => isset($fields['ls_image_3']) && is_array($fields['ls_image_3'])  && !empty($fields['ls_image_3'])  ? $fields['ls_image_3'] : false,
             'card' => $this->cardContent(isset($fields['ls_card']) && is_array($fields['ls_card']) ? $fields['ls_card'] : false),
         ];
     }
 
     function cardContent($card)
     {
-        if (!$card) {
-            return false;
-        }
-
         return [
             'title' => $card['title'] ?? false,
             'content' => $card['content'] ?? false,

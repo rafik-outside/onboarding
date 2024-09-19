@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_66e7ffcaa1db5",
-            "label": "",
+            "label": "Single Testimonail Block",
             "name": "fields",
             "aria-label": "",
             "type": "group",
@@ -43,7 +43,7 @@
                     "label": "Subtitle",
                     "name": "subtitle",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -53,10 +53,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
                 },
                 {
                     "key": "field_66e80103a1db8",
@@ -232,5 +232,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726482590
+    "modified": 1726741015
 }

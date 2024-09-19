@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_66e29721090f4",
-            "label": "",
+            "label": "Image with Cta",
             "name": "fields",
             "aria-label": "",
             "type": "group",
@@ -20,7 +20,7 @@
             "sub_fields": [
                 {
                     "key": "field_66e2bf95a524a",
-                    "label": "Image",
+                    "label": "Left Image",
                     "name": "image",
                     "aria-label": "",
                     "type": "image",
@@ -198,5 +198,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726467178
+    "modified": 1726740624
 }

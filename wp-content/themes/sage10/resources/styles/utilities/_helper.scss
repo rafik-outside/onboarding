@@ -277,3 +277,8 @@
     row-gap: 80px;
   }
 }
+@include media-breakpoint-down(md) {
+  .border-xs-0 {
+    border: none;
+  }
+}

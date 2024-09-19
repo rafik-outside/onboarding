@@ -93,3 +93,4 @@ class ToggleVideo {
 }
 
 export default ToggleVideo;
+new ToggleVideo();

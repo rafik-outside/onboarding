@@ -1,7 +1,6 @@
 import domReady from '@roots/sage/client/dom-ready';
 import header from './global/header';
-import ToggleVideo from './blocks/videoToggle';
-import FooterAccordion from './modules/footer-accordion';
+import FooterAccordion from './global/footer-accordion';
 
 // import 'bootstrap/js/src/offcanvas.js'
 
@@ -11,7 +10,6 @@ import FooterAccordion from './modules/footer-accordion';
 domReady(async () => {
   // ...
   header();
-  new ToggleVideo();
   new FooterAccordion();
 });
 

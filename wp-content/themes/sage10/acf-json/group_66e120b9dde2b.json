@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_66e12705ed6db",
-            "label": "",
+            "label": "Lead Space Block",
             "name": "content",
             "aria-label": "",
             "type": "group",
@@ -37,7 +37,7 @@
                 },
                 {
                     "key": "field_66e120baed6d7",
-                    "label": "Ls_image 1",
+                    "label": "Left Image",
                     "name": "ls_image_1",
                     "aria-label": "",
                     "type": "image",
@@ -62,7 +62,7 @@
                 },
                 {
                     "key": "field_66e126abed6d8",
-                    "label": "Ls_image 2",
+                    "label": "Right Image",
                     "name": "ls_image_2",
                     "aria-label": "",
                     "type": "image",
@@ -186,7 +186,7 @@
                 },
                 {
                     "key": "field_66e12875ed6df",
-                    "label": "Ls Image 3",
+                    "label": "Bottom Right Image",
                     "name": "ls_image_3",
                     "aria-label": "",
                     "type": "image",
@@ -332,5 +332,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726042822
+    "modified": 1726740572
 }

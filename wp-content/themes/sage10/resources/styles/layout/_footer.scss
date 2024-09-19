@@ -1,6 +1,11 @@
 @import '../common';
 
 .footer {
+  font-size: 1.8rem;
+  .h6 {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+  }
   &__list {
     list-style: none;
     padding-left: 0;
@@ -21,6 +26,7 @@
   }
   .accordion {
     &__title {
+      line-height: 1.21;
       background: none;
       border: 0;
     }

@@ -149,5 +149,5 @@ add_action('wp_head', function () {
 
 // Enqueue Inter font from Google Fonts
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('inter-font', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap', false, null);
+    wp_enqueue_style('inter-font', 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap', false, null);
 });
