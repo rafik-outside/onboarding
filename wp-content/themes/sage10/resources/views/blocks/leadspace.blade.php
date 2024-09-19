@@ -26,7 +26,7 @@
         $imgUrl = \Roots\asset('images/preview/leadspace.webp')->uri();
     @endphp
     <img loading="lazy" src="{!! $imgUrl !!}" style="width:100%;height:auto;">
-@else
+@elseif($img1 || $img2 || $img3 || $card['title'] || $card['content'] || $card['buttonUrl'])
     @php
         $blockId = $block['id'];
     @endphp
@@ -37,7 +37,6 @@
                 @if ($img1)
                     <div class="col-md-5 pe-xl-5 ls-col-5">
                         <div class="pe-xl-6 h-100">
-
                             <img src="{{ $img1['url'] }}" class="ls-col-5__img"
                                 @empty(!$img1['alt'])
                                 alt="{{ $img1['alt'] }}"
@@ -57,22 +56,22 @@
                 @endif
                 @if ($card)
                     <div class="col-xl-8  pe-xl-5">
-                        <div class="p-xl-20 p-md-10 p-6  border-top-8 bg-white">
+                        <div class="p-xl-20 p-md-10 py-10 px-6  border-top-8 bg-white">
                             @if ($card['title'])
                                 @include('components.heading', [
                                     'title' => $card['title'],
                                     'tag' => $titleTag,
-                                    'heading_class' => 'h2',
+                                    'heading_class' => 'h2 mb-4',
                                 ])
                             @endif
                             </h1>
                             @if ($card['content'])
-                                <div class="mt-6 @if ($bodyTextClass) {{ $bodyTextClass }} @endif">
+                                <div class="mb-10  @if ($bodyTextClass) {{ $bodyTextClass }} @endif">
                                     {!! $card['content'] !!}
                                 </div>
                             @endif
                             @if ($card['buttonUrl'] || $card['buttonTitle'])
-                                <div class="mt-10">
+                                <div class="">
                                     <a href="{{ $card['buttonUrl'] }}"
                                         @if ($card['buttonTarget']) target="{{ $card['buttonTarget  '] }}" @endif
                                         class="btn-outline-space">{{ $card['buttonTitle'] }}

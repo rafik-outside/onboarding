@@ -35,12 +35,12 @@
                 @if ($imgUrl)
                     <div class="col-md-6 ">
                         <div class="pe-2 pe-md-0">
-                            <div class="ratio ratio-4x3">
-                                <img src="{{ $imgUrl }}" class="shadow shadow--orange"
+                            <div class="img-with-cta__image-container">
+                                <img src="{{ $imgUrl }}"  class="shadow"
                                     @if ($imgAlt) title="{{ $imgTitle }}" @endif>
                                 @if ($imgAlt)
                                     {{ $imgAlt }}
-                                @endif>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                     @endif
                     @if ($content || date)
                         <div class="body">
-                            <span class=" text-sky d-block mb-6 mb-md-0 mb-xl-6"> {{ $date }}</span>
+                            <span class=" text-sky d-block mb-6 mb-md-0 mb-xl-4"> {{ $date }}</span>
                             {!! $content !!}
                         </div>
                     @endif

@@ -1,5 +1,5 @@
 {{--
-    script[banner.js]script
+    script[videoToggle.js]script
     style[modules/about-us.scss]style
     Title: About Us
     Description: about-us Description]
@@ -25,7 +25,7 @@
         $imgUrl = \Roots\asset('images/preview/about-us.webp')->uri();
     @endphp
     <img loading="lazy" src="{!! $imgUrl !!}" style="width:100%;height:auto;">
-@elseif($eyebrow || $title || $videoEyebrow || $buttonUrl || $videoUrl)
+@elseif($eyebrow || $title || $videoEyebrow || $buttonUrl || $videoUrl || $videoPosterUrl)
     @php
         $blockId = $block['id'];
     @endphp
@@ -36,7 +36,7 @@
                 @if ($eyebrow || $title || $buttonUrl)
                     <div class="col-md-6 d-flex justify-content-center row-gap-10 flex-column ">
                         @if ($eyebrow)
-                            <span class="eyebrow d-block "> {{ $eyebrow }}</span>
+                            <span class="eyebrow d-block ">{{ $eyebrow }}</span>
                         @endif
                         @if ($title)
                             <h2 class="h3 mb-0">
@@ -50,34 +50,34 @@
                                     'url' => $buttonUrl,
                                     'target' => $buttonTarget,
                                     'showIcon' => $showButtonIcon,
-                                    'a_class' => 'btn-sky',
+                                    'a_class' => 'btn-sky border-none',
                                 ])
                             </div>
                         @endif
 
                     </div>
                 @endif
-                @if ($videoEyebrow || $videoUrl)
+                @if ($videoEyebrow || $videoUrl || $videoPosterUrl)
                     <div class="col-xl-5 col-md-6  offset-xl-1 my-auto">
-                        <div class=" p-6 bg-mint ">
+                        <div class=" p-6 bg-moon ">
                             @if ($videoEyebrow)
-                                <h6 class="eyebrow mb-4"> {{ $videoEyebrow }}</h6>
+                                <h6 class="eyebrow mb-4">&nbsp;{{ $videoEyebrow }}</h6>
                             @endif
-                            @if ($videoUrl)
+                            @if ($videoUrl || $videoPosterUrl)
                                 <div class="about-us__video__container">
-                                    <button class="about-us__video__icon 
+                                    @if ($videoUrl)
+                                        <button class="about-us__video__icon 
                             js-play-video"
-                                        @if ($isVimeoLink) data-src="{{ $videoUrl }}" @endif><i
-                                            class="icon-play-pause"> </i></button>
-                                    @if ($isVimeoLink)
-                                        {{-- <iframe src="{{ $videoUrl }}" loading="lazy" frameborder="0"
-                                            allow="autoplay; fullscreen" class="about-us__video__content"
-                                            allowfullscreen>
-                                        </iframe> --}}
+                                            @if ($isVimeoLink) data-src="{{ $videoUrl }}" @endif><i
+                                                class="icon-play-pause"> </i></button>
+                                        @if (!$isVimeoLink)
+                                            <video class="about-us__video__content" src="{{ $videoUrl }}"
+                                                @if ($videoPosterUrl) poster="{{ $videoPosterUrl }}" @endif>
+                                            </video>
+                                        @endif
                                     @else
-                                        <video class="about-us__video__content" src="{{ $videoUrl }}"
-                                            @if ($videoPoster) poster="{{ $videoPoster }}" @endif>
-                                        </video>
+                                        <img src="{{ $videoPosterUrl }}" class="about-us__video__content"
+                                            alt="{{ $videoPosterAlt }}">
                                     @endif
                                 </div>
                             @endif

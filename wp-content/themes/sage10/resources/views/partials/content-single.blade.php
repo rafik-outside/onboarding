@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     @if ($imgUrl)
-                        <div class="col-md-8 ">
+                        <div class="col-md-8  post-content__image-box">
                             <img class="post-content__image" src="{{ $imgUrl }}" alt="{{ $imgAlt }}">
                         </div>
                     @endif
@@ -22,7 +22,7 @@
         </header>
         <div class="post-content">
             <div class="container">
-                <div class="row">
+                <div class="row gap-10">
                     <div class="entry-content   col-md-10 col-xl-8 mx-auto py-md-20 py-10">
                         @php(the_content())
                     </div>
@@ -36,18 +36,18 @@
     @if ($relatedPosts)
         <footer class="bg-blush py-xl-40  py-md-20 py-10">
             <div class="container">
-                <div class="row">
+                <div class="row card-container__row">
                     @foreach ($relatedPosts as $relatedPost)
-                        <div class="col-md-6 col-xl-4">
                             @component('components.post-card', [
                                 'title' => $relatedPost['title'],
                                 'imgUrl' => $relatedPost['imageUrl'],
                                 'imgAlt' => $relatedPost['imageAlt'],
                                 'date' => $relatedPost['date'],
                                 'postUrl' => $relatedPost['postUrl'],
+                                'containerClass' => 'col-md-6 col-xl-4 g-10 ',
+
                             ])
                             @endcomponent
-                        </div>
                     @endforeach
                 </div>
             </div>

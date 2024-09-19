@@ -4,6 +4,17 @@
 @import '../common';
 
 .team {
+  @include media-breakpoint-down(xl) {
+    .h3 {
+      font-size: 1.8rem;
+      line-height: 2rem;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    .eyebrow {
+      font-size: 1.8rem;
+    }
+  }
   @include media-breakpoint-down(md) {
     padding-top: 2.4rem;
     padding-bottom: 2.4rem;

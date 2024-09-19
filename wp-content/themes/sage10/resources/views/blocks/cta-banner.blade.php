@@ -35,17 +35,17 @@
             <div class="row ">
                 <div class="col-12">
                     @if ($title)
-                        <h2 class="h3 mb-0">
+                        <h2 class="h3 mb-2 mb-xl-4 ">
                             {{ $title }}
                         </h2>
                     @endif
                     @if ($content)
-                        <div class="body-xl  mt-2 mt-xl-4 mb-0">
-                            {!!  $content  !!}
+                        <div class="body-xl  mb-6 mb-xl-10">
+                            {!! $content !!}
                         </div>
                     @endif
                     @if ($buttonUrl)
-                        <div class="mt-6 mt-xl-10 mb-0">
+                        <div class=" mb-0">
                             @include('components.link-component', [
                                 'title' => $buttonTitle,
                                 'url' => $buttonUrl,

@@ -31,8 +31,8 @@ class AboutUs extends Composer
             'videoEyebrow' => $video['eyebrow'] ?? false,
             'isVimeoLink' => $isVimeoLink,
             'videoUrl' => $isVimeoLink ? $this->vimeoUrl($video['video_url']) : $video['video'] ?? false,
-            'videoPoster' => $video['videoPoster'] ?? false,
-
+            'videoPosterUrl' => (isset($video['video_thumbnail']) && is_array($video['video_thumbnail']) && !empty($video['video_thumbnail'])) ? $video['video_thumbnail']['url'] : false,
+            'videoPosterAlt' => (isset($video['video_thumbnail']) && is_array($video['video_thumbnail']) && !empty($video['video_thumbnail'])) ? $video['video_thumbnail']['alt'] : false,
         ];
     }
     function vimeoUrl($videoUrl)

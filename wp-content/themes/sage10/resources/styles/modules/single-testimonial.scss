@@ -11,6 +11,12 @@
     padding-top: 8.4rem;
     padding-bottom: 9.3rem;
   }
+  .h4 {
+    font-size: 2.8rem;
+  }
+  .body {
+    font-size: 1.8rem;
+  }
   .single-testimonial__img {
     position: relative;
     width: 15.3rem;
@@ -21,7 +27,6 @@
       width: 16.9rem;
       display: block;
       position: absolute;
-
       top: -0.8rem;
       left: -2.2rem;
 
@@ -50,6 +55,7 @@
   &__social {
     &__link {
       font-size: 24px;
+      line-height: 1;
     }
   }
   &__content {

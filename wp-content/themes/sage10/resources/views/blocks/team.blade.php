@@ -45,7 +45,7 @@
                         <div class="swiper-wrapper">
                             @foreach ($teams as $team)
                                 <div class="swiper-slide ">
-                                    @include('blocks.cards.team', [
+                                    @include('blocks.cards.card-team', [
                                         'card' => $team,
                                     ])
                                 </div>

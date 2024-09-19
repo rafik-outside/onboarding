@@ -21,6 +21,7 @@
       padding-bottom: 12rem;
     }
   }
+
   &__image {
     aspect-ratio: 327/ 245;
     object-fit: cover;
@@ -33,17 +34,13 @@
       aspect-ratio: 840 / 473;
     }
   }
-  &__title-container {
-    position: relative;
-
+  &__image-box + &__title-container {
     @include media-breakpoint-up(md) {
-      top: -10.7rem;
-      margin-bottom: -10.7rem;
+      margin-top: -10.7rem;
     }
 
     @include media-breakpoint-up(xl) {
-      top: -19.6rem;
-      margin-bottom: -19.6rem;
+      margin-top: -19.6rem;
     }
   }
   a {
@@ -273,5 +270,10 @@
     @include media-breakpoint-up(xl) {
       font-size: 2.3rem !important;
     }
+  }
+}
+@include media-breakpoint-only(md) {
+  .card-container__row :nth-child(n + 3) {
+    display: none;
   }
 }

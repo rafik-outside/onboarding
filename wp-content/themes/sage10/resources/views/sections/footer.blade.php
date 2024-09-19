@@ -1,4 +1,4 @@
-<footer class="footer bg-sky py-10 py-xl-20 bg-sky">
+<footer class="footer bg-sky py-10 py-md-20 bg-sky">
     <div class="container">
         <div class="row row-gap-10 row-gap-xl-20 js-accordion">
             @if ($headerLogoLight)
@@ -9,10 +9,8 @@
                 </div>
             @endif
             @if ($footerMenus && $hasFooterMenus)
-            {!! $footerMenus !!}
-                
+                {!! $footerMenus !!}
             @endif
-
             @if ($showNewsletter)
                 <div class="col-md-12 col-xl-6 mt-auto">
                     <form action="" class="footer__form">

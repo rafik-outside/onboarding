@@ -1,5 +1,5 @@
 .btn {
-  padding: 0.8rem 1.6rem;
+  padding: 0.6rem 1.4rem;
   transition: color 0.3s ease;
   font-family: $btn-font-family;
   align-items: center;
@@ -31,8 +31,8 @@
   border-style: solid;
 
   &--size-medium {
-    font-size: 1.6rem;
-    padding: 0.8rem 1.6rem;
+    font-size: 1.6rem !important;
+    padding: 0.6rem 1.4rem;
     gap: 10px;
   }
 }
