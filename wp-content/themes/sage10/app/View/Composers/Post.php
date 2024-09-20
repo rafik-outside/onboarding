@@ -83,26 +83,28 @@ class Post extends Composer
     }
     function getRelatedPost($id, $post_type)
     {
-        $args['post_type'] = $post_type;
-        $args['order'] = 'desc';
+        $args['post_type']      = $post_type;
+        $args['order']          = 'desc';
         $args['posts_per_page'] = 3;
-        $query = new WP_Query($args);
-        //Return False If No Data Found
+        $query                  = new WP_Query($args);
+
         if (!$query->have_posts()) return false;
-        $posts = [];
+        $posts                  = [];
+
         while ($query->have_posts()) {
             $query->the_post();
-            $post_id = get_the_ID();
+            $post_id  = get_the_ID();
             $imageUrl = get_the_post_thumbnail_url($post_id, 'medium');
             $image_id = get_post_thumbnail_id();
             $imageAlt = get_post_meta($image_id, '_wp_attachment_image_alt', TRUE);
-            $posts[] = [
-                'id' => $post_id,
-                'title' => get_the_title(),
-                'date' => get_the_date('F j, Y'),
-                'postUrl' => get_permalink($post_id),
-                'imageAlt' => $imageAlt,
-                'imageUrl' => $imageUrl,
+            
+            $posts[]  = [
+                'id'        => $post_id,
+                'title'     => get_the_title(),
+                'date'      => get_the_date('F j, Y'),
+                'postUrl'   => get_permalink($post_id),
+                'imageAlt'  => $imageAlt,
+                'imageUrl'  => $imageUrl,
             ];
         }
         wp_reset_query();

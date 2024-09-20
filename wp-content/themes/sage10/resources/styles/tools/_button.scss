@@ -1,4 +1,11 @@
-@mixin button-variant($background, $color, $hover-background, $hover-color, $disabled-background, $disabled-color) {
+@mixin button-variant(
+  $background,
+  $color,
+  $hover-background,
+  $hover-color,
+  $disabled-background,
+  $disabled-color
+) {
   color: $color;
   background-color: $background;
   border-color: $background;
@@ -16,7 +23,11 @@
     border-color: $disabled-background;
   }
 }
-@mixin button-outline-variant($color, $hover-color, $disabled-color) {
+@mixin button-outline-variant(
+  $color,
+  $hover-color,
+  $disabled-color
+) {
   color: $color;
   background-color: transparent;
   border-color: $color;

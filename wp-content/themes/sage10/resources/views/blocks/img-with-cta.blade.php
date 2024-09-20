@@ -1,5 +1,5 @@
 {{--
-    script[banner.js]script
+    script[]script
     style[modules/img-with-cta.scss]style
     Title: Image With Cta
     Description: img-wtih-cta Description]
@@ -35,13 +35,11 @@
                 @if ($imgUrl)
                     <div class="col-md-6 ">
                         <div class="pe-2 pe-md-0">
-                            <div class="img-with-cta__image-container">
-                                <img src="{{ $imgUrl }}"  class="shadow"
-                                    @if ($imgAlt) title="{{ $imgTitle }}" @endif>
-                                @if ($imgAlt)
-                                    {{ $imgAlt }}
-                                @endif
-                            </div>
+                            <img src="{{ $imgUrl }}" class="shadow img-with-cta__image w-100 object-fit-cover"
+                                @if ($imgAlt) title="{{ $imgTitle }}" @endif>
+                            @if ($imgAlt)
+                                {{ $imgAlt }}
+                            @endif
                         </div>
                     </div>
                 @endif
@@ -70,11 +68,11 @@
                     @if ($buttonUrl)
                         <div class="">
                             @include('components.link-component', [
-                                'title' => $buttonTitle,
-                                'url' => $buttonUrl,
-                                'target' => $buttonTarget,
-                                'showIcon' => $showIcon,
-                                'a_class' => 'btn-outline-space',
+                                'title'     => $buttonTitle,
+                                'url'       => $buttonUrl,
+                                'target'    => $buttonTarget,
+                                'showIcon'  => $showIcon,
+                                'a_class'   => 'btn-outline-space',
                             ])
                         </div>
                     @endif

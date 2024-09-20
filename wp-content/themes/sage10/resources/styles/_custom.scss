@@ -93,6 +93,11 @@
 @import './../../node_modules/bootstrap/scss/dropdown';
 @import './../../node_modules/bootstrap/scss/transitions';
 
+// Swiper Scss
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
 // Normalize Scss
 @import 'generic/fonts';
 @import 'generic/icons/icons';

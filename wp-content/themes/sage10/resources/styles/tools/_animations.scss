@@ -27,7 +27,8 @@ $time: 1.5s;
 @mixin animation-delay($from, $to, $cycle-length, $name) {
   @for $i from 1 through 4 {
     &.#{$name}-#{$i} {
-      animation-delay: -($cycle-length / ($from - $to)) * $i;
+      animation-delay: -($cycle-length / ($from - $to)) *
+        $i;
     }
   }
 }

@@ -11,21 +11,10 @@ if (!class_exists('FedWalker')) {
 
             $classes = empty($item->classes) ? array() : (array) $item->classes;
             $classes[] = 'menu-item-' . $item->ID;
-
-            // Check our custom has_children property.
-            if ($args->walker->has_children) {
-                $classes[] .= 'header__nav-item dropdown';
-            }
-
-            if (0 != $item->menu_item_parent) {
-                $classes[] .= '';
-            } else {
-                $classes[] .= 'header__nav-item ';
-            }
+            $classes[] .= 'header__nav-item ';
 
             $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
             $class_names = ' class="' . esc_attr($class_names) . '"';
-            // Check if the item is the current menu item.
 
             $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
             $id = strlen($id) ? ' id="' . esc_attr($id) . '"' : '';
@@ -36,14 +25,12 @@ if (!class_exists('FedWalker')) {
             $attributes .= !empty($item->target)     ? ' target="' . esc_attr($item->target) . '"' : '';
             $attributes .= !empty($item->xfn)        ? ' rel="'    . esc_attr($item->xfn) . '"' : '';
             $attributes .= !empty($item->url)        ? ' href="'   . esc_attr($item->url) . '"' : '';
+
+            // Check if the item is the current menu item.
             if (in_array('current-menu-item', $classes)) {
                 $attributes .= ' class="header__nav-link is-active"';
             } else {
-                if ($args->walker->has_children) {
-                    $attributes .= ' class="header__nav-link dropdown-toggle" title="' . $item->title . '"';
-                } else {
-                    $attributes .= ' class="header__nav-link" aria-current="page" title="' . $item->title . '"';
-                }
+                $attributes .= ' class="header__nav-link" aria-current="page" title="' . $item->title . '"';
             }
 
 
@@ -53,14 +40,6 @@ if (!class_exists('FedWalker')) {
             $item_output .= '<a' . $attributes . '>';
             $item_output .= $args->link_before . '' . $menutitle . '' . $args->link_after;
             $item_output .= '</a>';
-
-            if ($args->walker->has_children) {
-
-                $attributesinner = !empty($item->url) ? ' href="'   . esc_attr($item->url) . '"' : '';
-
-                $item_output .= '
-                <ul class="header__dropdown-menu fade-up m-0" >';
-            }
 
             $item_output .= $args->after;
 

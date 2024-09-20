@@ -63,7 +63,7 @@
     width: 8px;
     height: 8px;
     margin: 0 0.8rem;
-    border: 1px $space solid;
+    border: 1px solid $space;
     border-radius: 8px;
     cursor: pointer;
     &.active {

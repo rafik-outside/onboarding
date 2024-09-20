@@ -17,38 +17,33 @@
   .body {
     font-size: 1.8rem;
   }
-  .single-testimonial__img {
+  &__img-container {
     position: relative;
     width: 15.3rem;
     text-align: center;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1;
     &::before {
       content: '';
-      width: 16.9rem;
-      display: block;
+      width: calc(100% + 1.6rem);
+      height: calc(100% + 1.6rem);
       position: absolute;
       top: -0.8rem;
       left: -2.2rem;
-
-      background: $teal;
-      height: 16.9rem;
       border-radius: 50%;
+      background: $teal;
       z-index: -1;
       @include media-breakpoint-up(md) {
-        width: 26rem;
-        height: 26rem;
+        width: calc(100% + 2.4rem);
+        height: calc(100% + 2.4rem);
         top: -1.2rem;
         left: -3.4rem;
       }
     }
     @include media-breakpoint-up(md) {
       width: 23.6rem;
-      height: 23.6rem;
-      margin-top: 4.43rem;
     }
-
     img {
-      aspect-ratio: 1/1;
+      aspect-ratio: 1;
       border-radius: 50%;
     }
   }

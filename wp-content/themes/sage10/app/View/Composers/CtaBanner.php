@@ -23,13 +23,14 @@ class CtaBanner extends Composer
     public function with()
     {
         $fields = get_field('fields');
+        
         return [
-            'title' =>  $fields['title']?? false,
-            'content' =>  $fields['content']?? false,
-            'buttonUrl' => isset($fields['cta_button']) && is_array($fields['cta_button']) ? $fields['cta_button']['url'] : false,
-            'buttonTitle' => isset($fields['cta_button']) && is_array($fields['cta_button']) ? $fields['cta_button']['title'] : false,
-            'buttonTarget' => isset($fields['cta_button']) && is_array($fields['cta_button']) ? $fields['cta_button']['target'] : false,
-            'showIcon' => $fields['show_cta_button_icon']  ?? false,
+            'title'         =>  $fields['title']?? false,
+            'content'       =>  $fields['content']?? false,
+            'buttonUrl'     => isset($fields['cta_button']) && is_array($fields['cta_button']) ? $fields['cta_button']['url'] : false,
+            'buttonTitle'   => isset($fields['cta_button']) && is_array($fields['cta_button']) ? $fields['cta_button']['title'] : false,
+            'buttonTarget'  => isset($fields['cta_button']) && is_array($fields['cta_button']) ? $fields['cta_button']['target'] : false,
+            'showIcon'      => $fields['show_cta_button_icon']  ?? false,
         ];
     }
 }

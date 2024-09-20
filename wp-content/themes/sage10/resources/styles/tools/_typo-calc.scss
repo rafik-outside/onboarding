@@ -1,7 +1,13 @@
 // Scalable Typography
 // eg: @include rotate(45deg);
 /* stylelint-disable */
-@mixin interpolate($properties, $min-screen, $max-screen, $min-value, $max-value) {
+@mixin interpolate(
+  $properties,
+  $min-screen,
+  $max-screen,
+  $min-value,
+  $max-value
+) {
   & {
     @each $property in $properties {
       #{$property}: $min-value;
@@ -9,7 +15,12 @@
 
     @media screen and (min-width: $min-screen) {
       @each $property in $properties {
-        #{$property}: calc-interpolation($min-screen, $min-value, $max-screen, $max-value);
+        #{$property}: calc-interpolation(
+          $min-screen,
+          $min-value,
+          $max-screen,
+          $max-value
+        );
       }
     }
 
@@ -22,8 +33,14 @@
 }
 
 // Requires the calc-interpolation function which can also be used independently
-@function calc-interpolation($min-screen, $min-value, $max-screen, $max-value) {
-  $a: ($max-value - $min-value) / ($max-screen - $min-screen);
+@function calc-interpolation(
+  $min-screen,
+  $min-value,
+  $max-screen,
+  $max-value
+) {
+  $a: ($max-value - $min-value) /
+    ($max-screen - $min-screen);
   $b: $min-value - $a * $min-screen;
 
   $sign: '+';

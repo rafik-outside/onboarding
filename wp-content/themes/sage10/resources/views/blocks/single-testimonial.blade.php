@@ -40,13 +40,13 @@
                         </h2>
                     @endif
                     @if ($subtitle)
-                        <div class="body-xl text-center mb-xl-14 mb-6 ">
+                        <div class="body-xl text-center mb-xl-14 mb-md-11 mb-6 ">
                             {!! $subtitle !!}
                         </div>
                     @endif
                     @if ($imgUrl)
-                        <div class="single-testimonial__img  mx-auto  mb-xl-12 mb-md-11 mb-8">
-                            <img src="{{ $imgUrl }}"
+                        <div class="single-testimonial__img-container  mx-auto  mb-xl-12 mb-md-11 mb-8">
+                            <img src="{{ $imgUrl }}" class="w-100 object-fit-cover" 
                                 @if ($imgALt) alt="{{ $imgALt }}" @endif loading="lazy"
                                 decoding="async">
                         </div>
@@ -58,7 +58,7 @@
                     @endif
                     @if ($linkedinLink || $githubLink || $twitterLink || $fbLink)
                         <div
-                            class="single-testimonial__social d-flex column-gap-3 justify-content-center mb-xl-5 mb-md-7 mb-6 ">
+                            class="single-testimonial__social d-flex column-gap-3 justify-content-center mb-xl-5 mb-md-7 mb-6 flex-wrap">
                             @if ($linkedinLink)
                                 <a href="{{ $linkedinLink }}" title="Linked In" class="single-testimonial__social__link"
                                     target="_blank">
@@ -91,7 +91,9 @@
                     @endif
                     @if ($content)
                         <div class="text-center body single-testimonial__content mx-auto ">
-                            {!! $content !!}
+                            <q>
+                                {{ $content }}
+                            </q>
                         </div>
                     @endif
                 </div>

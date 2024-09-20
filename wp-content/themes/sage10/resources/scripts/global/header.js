@@ -1,36 +1,46 @@
+import { debounce } from '@scripts/utilities/debounce';
+import { throttle } from '../utilities/throttle';
+
 const header = () => {
-  document.addEventListener('DOMContentLoaded', function () {
-    var toggle_buttons = document.querySelectorAll('header .header-toggle-js');
-    if (toggle_buttons.length == 0) {
-      return;
-    }
-    toggle_buttons.forEach((button) => {
-      button.addEventListener('click', function () {
-        adjust_sidebar_height();
-        this.classList.toggle('open');
-        const header_menu = document.querySelector('header');
-        if (!header_menu.length == 0) {
-          return;
-        }
-        header_menu.classList.toggle('is-menu-open');
-        document.body.classList.toggle('overflow-hidden');
-      });
-    });
+  let toggle_buttons = document.querySelectorAll(
+    'header .header-toggle-js'
+  );
+  if (toggle_buttons.length == 0) {
+    return;
+  }
+  toggle_buttons.forEach((button) => {
+    const toogleMenuEvent = debounce(() => {
+      adjust_sidebar_height();
+      button.classList.toggle('open');
+      const header_menu = button.closest('header');
+      if (!header_menu.length == 0) {
+        return;
+      }
+      header_menu.classList.toggle('is-menu-open');
+      document.body.classList.toggle('overflow-hidden');
+    }, 200);
+    button.addEventListener('click', toogleMenuEvent);
   });
 };
-window.addEventListener('scroll', function () {
-  adjust_sidebar_height();
-});
+
 const adjust_sidebar_height = () => {
-  var header__nav__mobile = document.querySelector('.header__nav__mobile');
-  if (header__nav__mobile) {
-    let header = document.querySelector('#header');
-    if (header) {
-      let rect = header.getBoundingClientRect();
-      var bottom = rect.bottom;
-      header__nav__mobile.style.height = 'calc( 100vh - ' + bottom + 'px )';
-      header__nav__mobile.style.top = bottom + 'px';
-    }
+  let header = document.querySelector('#header');
+
+  if (!header) {
+    return;
   }
+  let rect = header.getBoundingClientRect().bottom + 'px';
+  document.documentElement.style.setProperty(
+    '--header-height',
+    rect
+  );
 };
+
+const throttledAdjustSidebarHeight = throttle(
+  adjust_sidebar_height,
+  100
+);
+
+addEventListener('resize', throttledAdjustSidebarHeight);
+
 export default header;
