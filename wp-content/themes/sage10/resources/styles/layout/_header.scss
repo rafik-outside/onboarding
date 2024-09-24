@@ -2,7 +2,7 @@
   --header-height: 11.8rem;
 }
 .header {
-  $slef: &;
+  $self: &;
 
   position: sticky;
   background-color: $white;
@@ -109,6 +109,28 @@
     position: relative;
     border: none;
     background: transparent;
+
+    &__icon,
+    &__icon::after,
+    &__icon::before {
+      position: absolute;
+      cursor: pointer;
+      top: 50%;
+      left: 0;
+      height: 2px;
+      border-radius: 2px;
+      width: 1.4rem;
+      background: $space;
+      @include transition(all 0.3s ease);
+    }
+    &__icon::before {
+      content: '';
+      top: -0.5rem;
+    }
+    &__icon::after {
+      content: '';
+      top: 0.5rem;
+    }
   }
 
   &.is-menu-open {
@@ -140,51 +162,29 @@
       }
     }
 
-    #{$slef}__nav {
+    #{$self}__nav {
       left: 0;
       visibility: visible;
       opacity: 1;
     }
-  }
-
-  &__burger__icon,
-  &__burger__icon::after,
-  &__burger__icon::before {
-    position: absolute;
-    cursor: pointer;
-    top: 50%;
-    left: 0;
-    height: 2px;
-    border-radius: 2px;
-    width: 1.4rem;
-    background: $space;
-    @include transition(all 0.3s ease);
-  }
-
-  &__burger__icon::before {
-    content: '';
-    top: -0.5rem;
-  }
-
-  &__burger__icon::after {
-    content: '';
-    top: 0.5rem;
-  }
-  .open {
-    #{$slef} {
-      &__burger__icon {
-        background: $white;
-        height: 0;
-      }
-      &__burger > &__burger__icon::before {
-        background: $white;
-        top: 0;
-        transform: rotate(-45deg);
-      }
-      &__burger > &__burger__icon::after {
-        background: $white;
-        top: 0;
-        transform: rotate(45deg);
+    .open {
+      #{$self} {
+        &__burger {
+          &__icon {
+            background: $white;
+            height: 0;
+          }
+          &__icon::before {
+            background: $white;
+            top: 0;
+            transform: rotate(-45deg);
+          }
+          &__icon::after {
+            background: $white;
+            top: 0;
+            transform: rotate(45deg);
+          }
+        }
       }
     }
   }
