@@ -93,10 +93,55 @@ export default async (app) => {
   });
 
   app
+    .purgecss({
+      content: [
+        app.path('resources/views/**'),
+        app.path('resources/scripts/**/*.{js,jsx,ts,tsx}'),
+        app.path('app/View/Composers/**'),
+      ],
+      safelist: [
+        /acf-/,
+        /wpcf7/,
+        /wpcf7-/,
+        /is-/,
+        /show/,
+        /offcanvas-/,
+        /wp-admin/,
+        /interface-/,
+        /swiper-/,
+        /collapsing/,
+        /js-/,
+        /emoji/,
+        /invalid/,
+        /newsletter-/,
+        /is-/,
+        /modal-/,
+        /me-/,
+        /gap-/,
+        /wp-/,
+        /data-/,
+        /select-/,
+        /cite/,
+        /interface-/,
+        /bl-/,
+        /js-/,
+        /c-/,
+        /acf-/,
+        /wpadminbar/,
+        /admin-bar/,
+        /icon-/,
+        /single-/,
+        /wp-/,
+        /block-/,
+        /header/,
+        /footer/,
+        /accordion/,
+      ],
+    })
     .assets(['images'])
     .minimize()
     .hash(false)
-    .splitChunks()
+    .splitChunks(false)
     .runtime('single');
 
   /**

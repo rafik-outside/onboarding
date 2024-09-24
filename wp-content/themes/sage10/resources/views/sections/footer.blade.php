@@ -3,7 +3,7 @@
         <div class="row row-gap-10 row-gap-xl-20 js-accordion">
             @if ($footerLogo)
                 <div class="col-12">
-                    <a href="{{ home_url('/') }}" title="{{ $headerLogo['alt'] }}">
+                    <a href="{{ home_url() }}" title="{{ $footerLogo['alt'] }}">
                         <img class="header__brand" src="{{ $footerLogo['url'] }}" alt="{{ $footerLogo['alt'] }}">
                     </a>
                 </div>
