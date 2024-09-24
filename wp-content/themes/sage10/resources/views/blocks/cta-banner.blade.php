@@ -19,7 +19,6 @@
     EnqueueAssetsCSS:
     EnqueueAssetsJS:
 --}}
-
 @if (!empty($is_preview))
     @php
         /* Render screenshot for example */
@@ -47,11 +46,11 @@
                     @if ($buttonUrl)
                         <div class=" mb-0">
                             @include('components.link-component', [
-                                'title' => $buttonTitle,
-                                'url' => $buttonUrl,
-                                'target' => $buttonTarget,
-                                'showIcon' => $showIcon,
-                                'a_class' => 'btn-sky',
+                                'title'     => $buttonTitle,
+                                'url'       => $buttonUrl,
+                                'target'    => $buttonTarget,
+                                'showIcon'  => $showIcon,
+                                'a_class'   => 'btn-sky',
                             ])
                         </div>
                     @endif

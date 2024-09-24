@@ -12,15 +12,22 @@ export default async (app) => {
   const resourcePath = app.fs.exists(app.path(`@src`));
 
   String.prototype.toKebabCase = function () {
-    return this.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g).join('-');
+    return this.match(
+      /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g
+    ).join('-');
   };
 
   // blade files issues
   async function bladefiles() {
     let moduleEnPoints = {};
-    const bladeFiles = await app.glob('@src/views/blocks/*.blade.php');
+    const bladeFiles = await app.glob(
+      '@src/views/blocks/*.blade.php'
+    );
     for (const moduleFilePath of bladeFiles) {
-      const name = path.basename(moduleFilePath, '.blade.php').toKebabCase().toLowerCase();
+      const name = path
+        .basename(moduleFilePath, '.blade.php')
+        .toKebabCase()
+        .toLowerCase();
       moduleEnPoints[name] = { js: [], css: [] };
 
       const str = await app.fs.read(moduleFilePath);
@@ -44,7 +51,9 @@ export default async (app) => {
   }
   var filePath = '';
 
-  const combinedModules = Object.entries(await bladefiles()).reduce((acc, [key, value]) => {
+  const combinedModules = Object.entries(
+    await bladefiles()
+  ).reduce((acc, [key, value]) => {
     acc[key] = value
       .map((fileName) => {
         console.log(fileName);
@@ -74,14 +83,21 @@ export default async (app) => {
    * @see {@link https://bud.js.org/docs/bud.assets}
    */
   // console.log(combinedModules);
-  app.entry('app', ['@scripts/app', '@styles/app']).entry('editor', ['@scripts/editor', '@styles/editor']);
+  app
+    .entry('app', ['@scripts/app', '@styles/app'])
+    .entry('editor', ['@scripts/editor', '@styles/editor']);
   Object.entries(combinedModules).forEach((element) => {
     if (!element[1]?.length) return;
     app.entry(...element);
     // console.log(element);
   });
 
-  app.assets(['images']).minimize().hash(false).splitChunks().runtime('single');
+  app
+    .assets(['images'])
+    .minimize()
+    .hash(false)
+    .splitChunks()
+    .runtime('single');
 
   /**
    * Set public path
@@ -122,7 +138,14 @@ export default async (app) => {
     .set('settings.custom.typography.font-size', {})
     .set('settings.custom.typography.line-height', {})
     .set('settings.spacing.padding', true)
-    .set('settings.spacing.units', ['px', '%', 'em', 'rem', 'vw', 'vh'])
+    .set('settings.spacing.units', [
+      'px',
+      '%',
+      'em',
+      'rem',
+      'vw',
+      'vh',
+    ])
     .set('settings.typography.customFontSize', false)
     .enable();
 };

@@ -1,10 +1,10 @@
 <footer class="footer bg-sky py-10 py-md-20 bg-sky">
     <div class="container">
         <div class="row row-gap-10 row-gap-xl-20 js-accordion">
-            @if ($headerLogoLight)
+            @if ($footerLogo)
                 <div class="col-12">
                     <a href="{{ home_url('/') }}" title="{{ $headerLogo['alt'] }}">
-                        <img class="header__brand" src="{{ $headerLogoLight['url'] }}" alt="{{ $headerLogoLight['alt'] }}">
+                        <img class="header__brand" src="{{ $footerLogo['url'] }}" alt="{{ $footerLogo['alt'] }}">
                     </a>
                 </div>
             @endif
@@ -30,9 +30,18 @@
                     </form>
                 </div>
             @endif
-            @if ($copyrightText)
+            @if ($copyrightText || $copyrightTextLink)
                 <div class="footer__copyright text-white col-12">
                     {{ $copyrightText }}
+                    @if ($copyrightTextLink)
+                        @include('components.link-component', [
+                            'title'     => $copyrightTextLink['title'],
+                            'url'       => $copyrightTextLink['url'],
+                            'target'    => $copyrightTextLink['target'],
+                            'showIcon'  => false,
+                            'a_class'   => 'footer__copyright-link',
+                        ])  
+                    @endif
                 </div>
             @endif
         </div>

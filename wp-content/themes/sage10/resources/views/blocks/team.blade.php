@@ -30,7 +30,6 @@
     @php
         $blockId = $block['id'];
         $imgUrl = \Roots\asset('images/preview/team.webp')->uri();
-
     @endphp
     <section class="team section-gutter-l bg-blush" id="{{ $blockId }}">
         <div class="container">

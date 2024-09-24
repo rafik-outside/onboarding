@@ -66,7 +66,7 @@
                     "name": "header_logo_light",
                     "aria-label": "",
                     "type": "image",
-                    "instructions": "",
+                    "instructions": "This logo is shown when the image is light",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -137,6 +137,31 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_66f0b753a6ca2",
+                    "label": "Footer Logo",
+                    "name": "footer_logo",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium"
+                },
+                {
                     "key": "field_66e919bd76d9e",
                     "label": "Show Newsletter",
                     "name": "show_newsletter",
@@ -203,6 +228,22 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": ""
+                },
+                {
+                    "key": "field_66f0b87fa6ca3",
+                    "label": "Copyright Text Link",
+                    "name": "footer_copyright_text_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
                 }
             ]
         }
@@ -225,5 +266,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726623754
+    "modified": 1727052415
 }

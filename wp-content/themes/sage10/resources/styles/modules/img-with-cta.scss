@@ -7,22 +7,13 @@
     }
   }
 
-  &__image-container {
-    height: 0;
-    position: relative;
-    padding-bottom: 83.9%;
+  &__image {
+    aspect-ratio: 318 / 267;
     @include media-breakpoint-up(md) {
-      padding-bottom: 73%;
+      aspect-ratio: 452 / 330;
     }
     @include media-breakpoint-up(xl) {
-      padding-bottom: 75%;
-    }
-    img {
-      position: absolute;
-      inset: 0;
-      object-fit: cover;
-      height: 100%;
-      width: 100%;
+      aspect-ratio: 620 / 465;
     }
   }
 }

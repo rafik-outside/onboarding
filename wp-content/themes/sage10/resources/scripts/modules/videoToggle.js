@@ -1,12 +1,16 @@
+import { debounce } from '@scripts/utilities/debounce';
 import Player from '@vimeo/player';
 
 class ToggleVideo {
   constructor() {
-    this.toggleVideo(); // Correctly reference the instance method
+    this.init(); // Correctly reference the instance method
   }
 
-  toggleVideo() {
-    const buttons = document.querySelectorAll('.js-play-video');
+  init() {
+    const buttons = document.querySelectorAll(
+      '.js-play-video'
+    );
+
     if (buttons.length === 0) return;
 
     buttons.forEach((button) => {
@@ -22,75 +26,85 @@ class ToggleVideo {
           controls: 0,
           muted: 1,
         };
-        var video01Player = new Player(videoContainer, option1);
-        video01Player.setVolume(0);
+        new Player(videoContainer, option1);
       }
-      button.addEventListener('click', () => {
-        // Use arrow function to retain `this` context
+
+      let videoClickEvent = debounce(() => {
         const target = button.nextElementSibling;
         if (!target) return;
         const tagName = target.tagName;
-        target.classList.add('about-us__video__content');
+        target.classList.add('about-us__video--content');
 
         let player = null;
 
         // Create Vimeo player instance if it's an iframe
         if (tagName === 'IFRAME') {
           player = new Player(target);
-          player.setVolume(0); // Set the volume to 0
         }
-
         // Pause or play the video
-        if (target.classList.contains('video-is-playing') && tagName) {
-          const videos = document.querySelectorAll('.about-us__video__content');
+        if (
+          target.classList.contains('video-is-playing') &&
+          tagName
+        ) {
+          const videos = document.querySelectorAll(
+            '.about-us__video--content'
+          );
 
-          this.pauseAll(videos); // Call the instance method
-          const pauseButtons = document.querySelectorAll('.about-us__video__container .pause-button');
+          pauseAll(videos); // Call the instance method
+          const pauseButtons = document.querySelectorAll(
+            '.about-us__video--container .pause-button'
+          );
           if (pauseButtons.length == 0) return;
-          this.removePauseButtonClass(pauseButtons);
+          removePauseButtonClass(pauseButtons);
         } else {
-          this.playVideo(tagName, target, player); // Call the instance method
-          const pauseButtons = document.querySelectorAll('.about-us__video__container .pause-button');
+          playVideo(tagName, target, player); // Call the instance method
+          const pauseButtons = document.querySelectorAll(
+            '.about-us__video--container .pause-button'
+          );
           button.classList.add('pause-button');
           if (pauseButtons.length == 0) {
             return;
           }
-          this.removePauseButtonClass(pauseButtons);
+          removePauseButtonClass(pauseButtons);
+        }
+      }, 200);
+      button.addEventListener('click', videoClickEvent);
+    });
+
+    const playVideo = (tagName, target, player) => {
+      const videos = document.querySelectorAll(
+        '.about-us__video--content.video-is-playing'
+      );
+      pauseAll(videos); // Ensure other videos are paused
+      target.classList.add('video-is-playing');
+      if (player) {
+        player.play(); // Asynchronous play for Vimeo
+      } else if (tagName === 'VIDEO') {
+        target.play(); // HTML5 video
+      }
+    };
+
+    const pauseAll = (videoElements) => {
+      videoElements.forEach((video) => {
+        video.classList.remove('video-is-playing');
+        if (video.tagName === 'IFRAME') {
+          const player = new Player(video);
+          player.pause(); // Asynchronous pause for Vimeo
+        } else if (video.tagName === 'VIDEO') {
+          video.pause(); // HTML5 video pause
         }
       });
-    });
-  }
-
-  playVideo(tagName, target, player) {
-    const videos = document.querySelectorAll('.about-us__video__content.video-is-playing');
-    this.pauseAll(videos); // Ensure other videos are paused
-    target.classList.add('video-is-playing');
-    if (player) {
-      player.play(); // Asynchronous play for Vimeo
-    } else if (tagName === 'VIDEO') {
-      target.play(); // HTML5 video
-    }
-  }
-
-  pauseAll(videoElements) {
-    videoElements.forEach((element) => {
-      element.classList.remove('video-is-playing');
-      if (element.tagName === 'IFRAME') {
-        const player = new Player(element);
-        player.pause(); // Asynchronous pause for Vimeo
-      } else if (element.tagName === 'VIDEO') {
-        element.pause(); // HTML5 video pause
+    };
+    const removePauseButtonClass = (pauseButtons) => {
+      if (pauseButtons) {
+        pauseButtons.forEach((pause) => {
+          pause.classList.remove('pause-button');
+        });
       }
-    });
-  }
-  removePauseButtonClass(pauseButtons) {
-    if (pauseButtons) {
-      pauseButtons.forEach((pause) => {
-        pause.classList.remove('pause-button');
-      });
-    }
+    };
   }
 }
 
 export default ToggleVideo;
+
 new ToggleVideo();

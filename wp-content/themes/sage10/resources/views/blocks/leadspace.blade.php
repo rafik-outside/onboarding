@@ -1,5 +1,5 @@
 {{--
-    script[banner.js]script
+    script[]script
     style[modules/leadspace.scss]style
     Title: Leadspace
     Description: Leadspace Description]
@@ -33,11 +33,11 @@
     <section class="leadspace @if ($backgroundVariation) {{ $backgroundVariation }} @endif  section-gutter"
         id="{{ $blockId }}">
         <div class="container">
-            <div class="row leadspace__row-gap">
+            <div class="row">
                 @if ($img1)
                     <div class="col-md-5 pe-xl-5 ls-col-5">
                         <div class="pe-xl-6 h-100">
-                            <img src="{{ $img1['url'] }}" class="ls-col-5__img"
+                            <img src="{{ $img1['url'] }}" class="leadspace__img-1 w-100 object-fit-cover"
                                 @empty(!$img1['alt'])
                                 alt="{{ $img1['alt'] }}"
                             @endempty>
@@ -47,7 +47,7 @@
                 @if ($img2)
                     <div class="col-md-7 ls-col-7  d-md-block d-none">
                         <div class="h-100">
-                            <img src="{{ $img2['url'] }}" class="ls-col-7__img"
+                            <img src="{{ $img2['url'] }}" class="leadspace__img-2 w-100 object-fit-cover"
                                 @empty(!$img2['alt'])
                             alt="{{ $img2['alt'] }}"
                         @endempty>
@@ -55,40 +55,38 @@
                     </div>
                 @endif
                 @if ($card)
-                    <div class="col-xl-8  pe-xl-5">
+                    <div class="col-xl-8  pe-xl-5 mt-xl-15 mt-md-10 mt-6">
                         <div class="p-xl-20 p-md-10 py-10 px-6  border-top-8 bg-white">
                             @if ($card['title'])
                                 @include('components.heading', [
-                                    'title' => $card['title'],
-                                    'tag' => $titleTag,
+                                    'title'         => $card['title'],
+                                    'tag'           => $titleTag,
                                     'heading_class' => 'h2 mb-4',
                                 ])
                             @endif
-                            </h1>
                             @if ($card['content'])
                                 <div class="mb-10  @if ($bodyTextClass) {{ $bodyTextClass }} @endif">
                                     {!! $card['content'] !!}
                                 </div>
                             @endif
                             @if ($card['buttonUrl'] || $card['buttonTitle'])
-                                <div class="">
-                                    <a href="{{ $card['buttonUrl'] }}"
-                                        @if ($card['buttonTarget']) target="{{ $card['buttonTarget  '] }}" @endif
-                                        class="btn-outline-space">{{ $card['buttonTitle'] }}
-                                        @if ($card['showButtonIcon'])
-                                            <i class="icon-right font-size-4">
-                                            </i>
-                                        @endif
-                                    </a>
+                                <div>
+                                    @include('components.link-component', [
+                                        'title'     => $card['buttonTitle'],
+                                        'url'       => $card['buttonUrl'],
+                                        'target'    => $card['buttonTarget'],
+                                        'showIcon'  => $card['showButtonIcon'],
+                                        'a_class'   => 'btn-outline-space',
+                                    ])
                                 </div>
                             @endif
                         </div>
                     </div>
                 @endif
                 @if ($img3)
-                    <div class="col-xl-4 d-xl-block d-none  ps-xl-5">
+                    <div class="col-xl-4 d-xl-block d-none  ps-xl-5 mt-xl-15 mt-md-10 mt-6">
                         <div class="pe-6">
-                            <img src="{{ $img3['url'] }}" class="ar-1x1"
+                            <img src="{{ $img3['url'] }}" class="leadspace__img-1 w-100 object-fit-cover"
                                 @empty(!$img3['alt'])
                             alt="{{ $img3['alt'] }}"
                         @endempty>

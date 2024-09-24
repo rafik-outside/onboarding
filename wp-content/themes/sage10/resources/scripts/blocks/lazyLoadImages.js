@@ -1,5 +1,6 @@
 export function lazyLoadImage() {
-  const lazyImages = document.querySelectorAll('.js-img-lazy');
+  const lazyImages =
+    document.querySelectorAll('.js-img-lazy');
   if (lazyImages.length == 0) {
     return;
   }
@@ -35,7 +36,10 @@ export function lazyLoadImage() {
       threshold: 0.5,
     };
 
-    let lazyImageObserver = new IntersectionObserver(checkIntersection, options);
+    let lazyImageObserver = new IntersectionObserver(
+      checkIntersection,
+      options
+    );
 
     lazyImages.forEach((lazyImage) => {
       lazyImageObserver.observe(lazyImage);

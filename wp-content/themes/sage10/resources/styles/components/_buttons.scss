@@ -9,7 +9,14 @@
 .btn-space {
   @extend .btn;
 
-  @include button-variant($space, $white, $teal, $white, $blush, $white);
+  @include button-variant(
+    $space,
+    $white,
+    $teal,
+    $white,
+    $blush,
+    $white
+  );
 
   border-width: 0.2rem;
   border-style: solid;
@@ -17,7 +24,14 @@
 .btn-sky {
   @extend .btn;
 
-  @include button-variant($sky, $white, $teal, $white, $blush, $white);
+  @include button-variant(
+    $sky,
+    $white,
+    $teal,
+    $white,
+    $blush,
+    $white
+  );
 
   border-width: 0.2rem;
   border-style: solid;

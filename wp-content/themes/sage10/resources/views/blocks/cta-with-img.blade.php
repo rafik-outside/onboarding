@@ -45,33 +45,31 @@
                     @endif
                     @if ($content)
                         <div class="body-l ">
-                            {!! $content  !!}
+                            {!! $content !!}
                         </div>
                     @endif
                     @if ($content_small)
                         <div class="body">
-                            {!! $content_small  !!}
+                            {!! $content_small !!}
                         </div>
                     @endif
 
                     @if ($buttonUrl)
                         <div class="">
                             @include('components.link-component', [
-                                'title' => $buttonTitle,
-                                'url' => $buttonUrl,
-                                'target' => $buttonTarget,
-                                'showIcon' => $showIcon,
-                                'a_class' => 'btn-sky',
+                                'title'     => $buttonTitle,
+                                'url'       => $buttonUrl,
+                                'target'    => $buttonTarget,
+                                'showIcon'  => $showIcon,
+                                'a_class'   => 'btn-sky',
                             ])
                         </div>
                     @endif
                 </div>
                 @if ($imgUrl)
                     <div class="col-xl-5 col-md-6  my-auto order-1 offset-xl-1">
-                        <div class="cta-with-img__img">
-                            <img src="{{ $imgUrl }}" loading="lazy" decoding="async"
-                                @if ($imgAlt) alt="{{ $imgAlt }}" @endif>
-                        </div>
+                        <img src="{{ $imgUrl }}" class="object-fit-cover cta-with-img__img w-100" loading="lazy"
+                            decoding="async" @if ($imgAlt) alt="{{ $imgAlt }}" @endif>
                     </div>
                 @endif
             </div>
