@@ -46,9 +46,7 @@
                     <div class="col-md-7 ls-col-7  d-md-block d-none">
                         <div class="h-100">
                             <img src="{{ $img2['url'] }}" class="leadspace__img-2 w-100 object-fit-cover"
-                                @empty(!$img2['alt'])
-                            alt="{{ $img2['alt'] }}"
-                        @endempty>
+                                alt="{{ $img2['alt'] }}">
                         </div>
                     </div>
                 @endif
@@ -70,11 +68,11 @@
                             @if ($card['buttonUrl'] || $card['buttonTitle'])
                                 <div>
                                     @include('components.link-component', [
-                                        'title'     => $card['buttonTitle'],
-                                        'url'       => $card['buttonUrl'],
-                                        'target'    => $card['buttonTarget'],
-                                        'showIcon'  => $card['showButtonIcon'],
-                                        'a_class'   => 'btn-outline-space',
+                                        'title' => $card['buttonTitle'],
+                                        'url' => $card['buttonUrl'],
+                                        'target' => $card['buttonTarget'],
+                                        'showIcon' => $card['showButtonIcon'],
+                                        'a_class' => 'btn-outline-space',
                                     ])
                                 </div>
                             @endif
