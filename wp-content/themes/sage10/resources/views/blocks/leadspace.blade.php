@@ -38,9 +38,7 @@
                     <div class="col-md-5 pe-xl-5 ls-col-5">
                         <div class="pe-xl-6 h-100">
                             <img src="{{ $img1['url'] }}" class="leadspace__img-1 w-100 object-fit-cover"
-                                @empty(!$img1['alt'])
-                                alt="{{ $img1['alt'] }}"
-                            @endempty>
+                                alt="{{ $img1['alt'] }}">
                         </div>
                     </div>
                 @endif
@@ -48,9 +46,7 @@
                     <div class="col-md-7 ls-col-7  d-md-block d-none">
                         <div class="h-100">
                             <img src="{{ $img2['url'] }}" class="leadspace__img-2 w-100 object-fit-cover"
-                                @empty(!$img2['alt'])
-                            alt="{{ $img2['alt'] }}"
-                        @endempty>
+                                alt="{{ $img2['alt'] }}">
                         </div>
                     </div>
                 @endif
@@ -59,8 +55,8 @@
                         <div class="p-xl-20 p-md-10 py-10 px-6  border-top-8 bg-white">
                             @if ($card['title'])
                                 @include('components.heading', [
-                                    'title'         => $card['title'],
-                                    'tag'           => $titleTag,
+                                    'title' => $card['title'],
+                                    'tag' => $titleTag,
                                     'heading_class' => 'h2 mb-4',
                                 ])
                             @endif
@@ -72,11 +68,11 @@
                             @if ($card['buttonUrl'] || $card['buttonTitle'])
                                 <div>
                                     @include('components.link-component', [
-                                        'title'     => $card['buttonTitle'],
-                                        'url'       => $card['buttonUrl'],
-                                        'target'    => $card['buttonTarget'],
-                                        'showIcon'  => $card['showButtonIcon'],
-                                        'a_class'   => 'btn-outline-space',
+                                        'title' => $card['buttonTitle'],
+                                        'url' => $card['buttonUrl'],
+                                        'target' => $card['buttonTarget'],
+                                        'showIcon' => $card['showButtonIcon'],
+                                        'a_class' => 'btn-outline-space',
                                     ])
                                 </div>
                             @endif
@@ -87,9 +83,7 @@
                     <div class="col-xl-4 d-xl-block d-none  ps-xl-5 mt-xl-15 mt-md-10 mt-6">
                         <div class="pe-6">
                             <img src="{{ $img3['url'] }}" class="leadspace__img-1 w-100 object-fit-cover"
-                                @empty(!$img3['alt'])
-                            alt="{{ $img3['alt'] }}"
-                        @endempty>
+                                alt="{{ $img3['alt']"">
                         </div>
                     </div>
                 @endif

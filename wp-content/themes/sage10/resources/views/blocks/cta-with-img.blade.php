@@ -69,7 +69,7 @@
                 @if ($imgUrl)
                     <div class="col-xl-5 col-md-6  my-auto order-1 offset-xl-1">
                         <img src="{{ $imgUrl }}" class="object-fit-cover cta-with-img__img w-100" loading="lazy"
-                            decoding="async" @if ($imgAlt) alt="{{ $imgAlt }}" @endif>
+                            decoding="async" alt="{{ $imgAlt }}">
                     </div>
                 @endif
             </div>

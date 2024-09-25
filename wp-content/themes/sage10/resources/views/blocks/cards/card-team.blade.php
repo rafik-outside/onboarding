@@ -3,7 +3,7 @@
         <div class="col-md-6  border-top-8 pe-xl-5 pe-md-0 pe-5">
             <div class=" pe-xl-9 pe-md-0">
                 <img src="{{ $card['imgUrl'] }}" decoding="async" class="team-swiper-img object-fit-cover w-100"
-                    loading="lazy" @if ($card['imgAlt']) alt="{{ $card['imgAlt'] }}" @endif>
+                    loading="lazy" alt="{{ $card['imgAlt'] }}">
             </div>
         </div>
     @endif

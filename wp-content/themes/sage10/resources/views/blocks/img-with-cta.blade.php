@@ -36,10 +36,8 @@
                     <div class="col-md-6 ">
                         <div class="pe-2 pe-md-0">
                             <img src="{{ $imgUrl }}" class="shadow img-with-cta__image w-100 object-fit-cover"
-                                @if ($imgAlt) title="{{ $imgTitle }}" @endif>
-                            @if ($imgAlt)
-                                {{ $imgAlt }}
-                            @endif
+                                alt="{{ $imgAlt }}">
+
                         </div>
                     </div>
                 @endif
