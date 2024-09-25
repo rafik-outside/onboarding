@@ -37,7 +37,7 @@ class Header extends Composer
 
         return [
             'hasPrimaryMenu'    => $hasPrimaryMenu,
-            'primaryMenus'      => ! empty($primaryMenus)  ? $primaryMenus : false,
+            'primaryMenus'      => !empty($primaryMenus)  ? $primaryMenus : false,
             'headerLogo'        => isset($headerSettings['header_logo']) && is_array($headerSettings['header_logo']) && !empty($headerSettings['header_logo']) ? $headerSettings['header_logo'] : false,
             'headerLogoLight'   => isset($headerSettings['header_logo_light']) && is_array($headerSettings['header_logo_light']) && !empty($headerSettings['header_logo_light']) ? $headerSettings['header_logo_light'] : false,
             'cta'               => isset($headerSettings['call_to_action_button']) && is_array($headerSettings['call_to_action_button']) ? $headerSettings['call_to_action_button'] : false,

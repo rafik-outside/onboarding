@@ -43,7 +43,6 @@ class Footer extends Composer
             'newsletterTitle'   => isset($footerSettings['newsletter_title']) ? $footerSettings['newsletter_title'] : false,
             'copyrightText'     => isset($footerSettings['copyright_text']) ? $footerSettings['copyright_text'] : false,
             'copyrightTextLink' => isset($footerSettings['footer_copyright_text_link']) && is_array($footerSettings['footer_copyright_text_link']) && !empty($footerSettings['footer_copyright_text_link']) ? $footerSettings['footer_copyright_text_link'] : false,
-
         ];
     }
 }
