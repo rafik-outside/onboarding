@@ -46,9 +46,8 @@
                     @endif
                     @if ($imgUrl)
                         <div class="single-testimonial__img-container  mx-auto  mb-xl-12 mb-md-11 mb-8">
-                            <img src="{{ $imgUrl }}" class="w-100 object-fit-cover" 
-                                @if ($imgALt) alt="{{ $imgALt }}" @endif loading="lazy"
-                                decoding="async">
+                            <img src="{{ $imgUrl }}" class="w-100 object-fit-cover" alt="{{ $imgALt }}"
+                                loading="lazy" decoding="async">
                         </div>
                     @endif
                     @if ($name)

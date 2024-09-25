@@ -27,7 +27,7 @@ class SingleTestimonial extends Composer
 
         return [
             'imgALt'        => isset($image['alt']) ? $image['alt'] : false,
-            'imgUrl'        => isset($image['url']) ? $image['url'] : false,
+            'imgUrl'        => isset($image['url']) ? $image['url'] : '',
             'title'         => $fields['title'] ?? false,
             'subtitle'      => $fields['subtitle'] ?? false,
             'linkedinLink'  => $fields['linkedin_link'] ?? false,
